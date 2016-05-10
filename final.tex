@@ -1,5 +1,5 @@
 
-\title{Quandle Colorings on $(r,q)$-torus knots}
+\title{Quandle Colorings on $(r,k)$-torus knots}
 \author{
         Andrew Berger \\
 	Brandon Flannery \\
@@ -16,7 +16,7 @@
 \maketitle
 
 \begin{abstract}
-	Quandles are an algebraic structure equipped with axioms that mirror all the Reidemeister Moves. As such they play important role in knot theory. The dihedral quandle, for instance is used to compute the Fox $n$-coloring (or $Z_p$ coloring) of a knot. The dihedral quandle is a special case of what is known as the Alexander Quandle. Furthermore, the Alexander Quandle is used to compute a more generalized version of For $n$-coloring known as Quandle Coloring (or $Z_{n,q}$ coloring). In this paper we devise methods of efficiently determining whether a $(r,q)$-torus knot is $Z_{n,q}$ colorable.
+	Quandles are an algebraic structure equipped with axioms that mirror all the Reidemeister Moves. As such they play important role in knot theory. The dihedral quandle, for instance is used to compute the Fox $n$-coloring (or $Z_p$ coloring) of a knot. The dihedral quandle is a special case of what is known as the Alexander Quandle. Furthermore, the Alexander Quandle is used to compute a more generalized version of For $n$-coloring known as Quandle Coloring (or $Z_{n,q}$ coloring). In this paper we devise methods of efficiently determining whether a $(r,k)$-torus knot is $Z_{n,q}$ colorable.
 \end{abstract}
 
 \section{Introduction}
@@ -65,10 +65,41 @@ $$ 2x - y - z = 0 \mod p $$
 \subsection{Quandle Coloring}
 
 (TODO: Complete the description)
-We say that a knot is $Z_{q,n}$ if for some unit $q \in \mathbb{Z}$ was a labeling of strands so that
+We say that a knot is $Z_{n,q}$ if for some unit $q \in \mathbb{Z}$ there is a labeling of strands so that
 
 \section{Quandle Coloring of the (2,q)-torus knot}\label{2qtorus}
-We first consider any results we can acquire about the $(r,q)$-torus knot by fixing $r = 2$. Thus we consider the 
+We first restrict ourselves to $(r,k)$-torus where $r = 2$. Furthermore we only concern $Z_n$ when $p$ is prime to ensure that every element of $Z_n$ is a unit and every so every element has an inverse.
+
+The $(2,k)$-torus knot satisfies the following recurrence relation:
+\begin{align*}
+	a_0 &= x \\
+	a_1 &= y \\
+	a_{n+2} &= a_{n} \cdot a_{n+1} \\
+\end{align*}
+
+We can then substitute the Alexander quandle to conclude:
+
+$$ a_{n+2} = qa_{n} + (1-q)b_{n+1} $$
+
+Solving for $a_n$ we get:
+
+$$ a_n = \frac{(-1)^nqx+t^nx+(-1)^{n+1}y+q^ny}{1+q} $$
+
+Because we restrict ourselves to $p$ being prime division by $1+q$ is allowed.
+
+To determine whether a knot is $\mathbb{Z}_{n,p}$ colorable we must solve for the system of equations so that $\forall x,y \in \mathbb{Z}_n$ the following holds:
+
+\begin{align*}
+	a_0 &\equiv a_{n}  \mod{n}
+	a_1 &\equiv a_{n+1} \mod{n}
+\end{align*}
+
+We now know an explicit formula for $a_n$ so we may substitute it in accordingly:
+
+\begin{align*}
+	x &\equiv \frac{(-1)^nqx+t^nx+(-1)^{n+1}y+q^ny}{1+q} & \mod{n} \\
+	y &\equiv \frac{(-1)^{n+1}qx+t^nx+(-1)^{n+2}y+q^{n+1}y}{1+q} & \mod{n} \\
+\end{align*}
 
 \section{Results}\label{results}
 In this section we describe the results.
