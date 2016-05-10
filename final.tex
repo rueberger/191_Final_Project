@@ -65,10 +65,10 @@ $$ 2x - y - z = 0 \mod p $$
 \subsection{Quandle Coloring}
 
 (TODO: Complete the description)
-We say that a knot is $Z_{n,q}$ if for some unit $q \in \mathbb{Z}$ there is a labeling of strands so that
+We say that a knot is $Z_{p,q}$ colorable if for some unit $q \in \mathbb{Z}_p$ there is a labeling of strands so that
 
 \section{Quandle Coloring of the (2,q)-torus knot}\label{2qtorus}
-We first restrict ourselves to $(r,k)$-torus where $r = 2$. Furthermore we only concern $Z_n$ when $p$ is prime to ensure that every element of $Z_n$ is a unit and every so every element has an inverse.
+We first restrict ourselves to $(r,k)$-torus where $r = 2$. Furthermore we only concern $Z_p$ when $p$ is prime to ensure that every element of $Z_p$ is a unit and every so every element has an inverse.
 
 The $(2,k)$-torus knot satisfies the following recurrence relation:
 \begin{align*}
@@ -87,21 +87,21 @@ $$ a_n = \frac{(-1)^nqx+t^nx+(-1)^{n+1}y+q^ny}{1+q} $$
 
 Because we restrict ourselves to $p$ being prime division by $1+q$ is allowed.
 
-To determine whether a knot is $\mathbb{Z}_{n,p}$ colorable we must solve for the system of equations so that $\forall x,y \in \mathbb{Z}_n$ the following holds:
+To determine whether a knot is $\mathbb{Z}_{p,q}$ colorable we must solve for the system of equations so that $\forall x,y \in \mathbb{Z}_n$ the following holds:
 
 \begin{align*}
-	a_0 &\equiv a_{n}  & \mod{n} \\
-	a_1 &\equiv a_{n+1} & \mod{n} \\
+	a_0 &\equiv a_{n}  & \mod{p} \\
+	a_1 &\equiv a_{n+1} & \mod{p} \\
 \end{align*}
 
 We now know an explicit formula for $a_n$ so we may substitute it in accordingly:
 
 \begin{align*}
-	x &\equiv \frac{(-1)^nqx+q^nx+(-1)^{n+1}y+q^ny}{1+q} & \mod{n} \\
-	y &\equiv \frac{(-1)^{n+1}qx+q^{n+1}x+(-1)^{n+2}y+q^{n+1}y}{1+q} & \mod{n} \\
+	x &\equiv \frac{(-1)^nqx+q^nx+(-1)^{n+1}y+q^ny}{1+q} & \mod{p} \\
+	y &\equiv \frac{(-1)^{n+1}qx+q^{n+1}x+(-1)^{n+2}y+q^{n+1}y}{1+q} & \mod{p} \\
 \end{align*}
 
-Because we are restricting ourselves to the quandle colorings of knots and we are restricting $n$ to be prime this means that $n$ must be odd. We can then simplify the congruences to the following:
+Because we are restricting ourselves to the quandle colorings of knots and we are restricting $p$ to be prime this means that $p$ must be odd. We can then simplify the congruences to the following:
 
 \begin{align*} 
 	x &\equiv \frac{-qx+q^nx+y+q^ny}{1+q} & \mod{n} \\
