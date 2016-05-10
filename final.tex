@@ -8,7 +8,7 @@
 \date{\today}
 
 \documentclass[12pt]{article}
-\usepackage{amsmath, amsfonts}
+\usepackage{amsmath, amsfonts, mdframed}
 
 
 \begin{document}
@@ -68,7 +68,7 @@ $$ 2x - y - z = 0 \mod p $$
 We say that a knot is $Z_{p,q}$ colorable if for some unit $q \in \mathbb{Z}_p$ there is a labeling of strands so that
 
 \section{Quandle Coloring of the (2,q)-torus knot}\label{2ntorus}
-We first restrict ourselves to $(r,n)$-torus where $r = 2$. Furthermore we only concern $Z_p$ when $p$ is prime to ensure that every element of $Z_p$ is a unit and every so every element has an inverse.
+We first restrict ourselves to $(r,n)$-torus where $r = 2$. Furthermore we only concern $Z_p$ when $p > 2$ is prime to ensure that every element of $Z_p$ is a unit and every so every element has an inverse.
 
 The $(2,n)$-torus knot satisfies the following recurrence relation:
 \begin{align*}
@@ -108,11 +108,11 @@ Because we are restricting ourselves to the quandle colorings of knots $n$ must 
 	y &\equiv \frac{qx+q^{n+1}x-y+q^{n+1}y}{1+q} & \mod{p} \\
 \end{align*}
 
-\section{Results}\label{results}
-In this section we describe the results.
+\section{Further Questions}\label{fqs}
 
-\section{Conclusions}\label{conclusions}
-We worked hard, and achieved very little.
+\begin{enumerate}
+	\item Consider what happens to $Z_{p,q}$ when $p$ is not prime.
+\end{enumerate}
 
 \bibliographystyle{abbrv}
 \bibliography{main}
