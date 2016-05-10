@@ -67,10 +67,10 @@ $$ 2x - y - z = 0 \mod p $$
 (TODO: Complete the description)
 We say that a knot is $Z_{p,q}$ colorable if for some unit $q \in \mathbb{Z}_p$ there is a labeling of strands so that
 
-\section{Quandle Coloring of the (2,q)-torus knot}\label{2qtorus}
-We first restrict ourselves to $(r,k)$-torus where $r = 2$. Furthermore we only concern $Z_p$ when $p$ is prime to ensure that every element of $Z_p$ is a unit and every so every element has an inverse.
+\section{Quandle Coloring of the (2,q)-torus knot}\label{2ntorus}
+We first restrict ourselves to $(r,n)$-torus where $r = 2$. Furthermore we only concern $Z_p$ when $p$ is prime to ensure that every element of $Z_p$ is a unit and every so every element has an inverse.
 
-The $(2,k)$-torus knot satisfies the following recurrence relation:
+The $(2,n)$-torus knot satisfies the following recurrence relation:
 \begin{align*}
 	a_0 &= x \\
 	a_1 &= y \\
@@ -101,7 +101,7 @@ We now know an explicit formula for $a_n$ so we may substitute it in accordingly
 	y &\equiv \frac{(-1)^{n+1}qx+q^{n+1}x+(-1)^{n+2}y+q^{n+1}y}{1+q} & \mod{p} \\
 \end{align*}
 
-Because we are restricting ourselves to the quandle colorings of knots and we are restricting $p$ to be prime this means that $p$ must be odd. We can then simplify the congruences to the following:
+Because we are restricting ourselves to the quandle colorings of knots $n$ must be odd. We can then simplify the congruences to the following:
 
 \begin{align*} 
 	x &\equiv \frac{-qx+q^nx+y+q^ny}{1+q} & \mod{p} \\
