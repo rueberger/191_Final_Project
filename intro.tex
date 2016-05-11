@@ -2,17 +2,42 @@
 
 \begin{document}
 \section{Introduction}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{R1}
+        \caption{R1}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+      %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{R2}
+        \caption{R2}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.3\textwidth}
+        \includegraphics[width=\textwidth]{R3}
+        \caption{R3}
+    \end{subfigure}
+    \caption{The quandle axioms are chosen such that quandle colorings are naturally diagram invariant. Figures reproduced from~\cite{Cusick}}\label{fig:quandle_axioms}
+\end{figure}
+
+
+
+
 \subsection{Involutary Quandle}
-In this paper we concern ourselves with \textbf{Involutory Quandles}. An \textbf{involutory quandle} is any set $K$ equiped with a binary operation $\cdot$ that satisfies $3$ axioms:
+In this paper we concern ourselves with \textbf{Involutory Quandles}. An \textbf{involutory quandle} is any set $K$ equiped with a binary operation $\uc$ that satisfies $3$ axioms:
 
 \begin{equation}
-	x \cdot x = x
+	x \uc x = x
 \end{equation}
 \begin{equation}
-	x \cdot (x \cdot y) = y \\
+	x \uc (x \uc y) = y \\
 \end{equation}
 \begin{equation}
-	x \cdot (y \cdot z) = (x \cdot y) \cdot (x \cdot z) \\
+	x \uc (y \uc z) = (x \uc y) \uc (x \uc z) \\
 \end{equation}
 
 These equations can be though of a symbolic representations of Reidemeister moves. $(1)$ corresponds to the Type I Reidemeister move, $(2)$ corresponds to the Type II Reidemeister move, and $(3)$ corresponds to the Type III Reidemeister move. (See Fig)
@@ -21,18 +46,18 @@ These equations can be though of a symbolic representations of Reidemeister move
 
 The \textbf{Alexander Quandle} is defined as:
 
-$$ x \cdot y = ty + (1 - t)a $$
+$$ x \uc y = ty + (1 - t)a $$
 
 $t$ is usually a free variable in $\mathbb{C}$ however for this paper we consider a special case of the Alexander Quandle:
 
-$$ x \cdot y = qy + (1 - q)a $$
+$$ x \uc y = qy + (1 - q)a $$
 
 where $q$ is a free variable in $\mathbb{Z}_n$. The reasons for this will be made clear when we consider the relationship between the Alexander Quandle and coloring.
 
 \subsection{Dihedral Quandle}
 The \textbf{Dihedral Quandle} is defined as:
 
-$$x\cdot y = 2x - y$$
+$$x\uc y = 2x - y$$
 
 it is a special case of the Alexander quandle when $t$ is evaluated at $-1$.
 
