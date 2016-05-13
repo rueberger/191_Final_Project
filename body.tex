@@ -240,6 +240,219 @@ Because we are restricting ourselves to the quandle colorings of knots $n$ must 
 	y &\equiv \frac{qx+q^{n+1}x-y+q^{n+1}y}{1+q} & \mod{p} \\
 \end{align*}
 
+From this point, we can arrive upon the $Z_{p,q}$ quandle colorings of any $T(2, p)$ torus knot. Find all $q$  satisfying the equivalence relation above $\forall x,y \in \mathbb{Z}_n$
+
+\section{Quandle Coloring of the (2,q)-torus knot}\label{sec:2ntorus}
+We first restricted ourselves to $T(2,p)$-torus knots. Conveniently, we were able to derive an easily diagonalizable recurrence relation matrix, $A$. Now, we are going to try and extend this $Z_{p,q}$ quandle coloring to all $T(p,3)$ knots. 
+
+Remember, the $(2,n)$-torus knot satisfies the following recurrence relation:
+\begin{align*}
+	a_0 &= x \\
+	a_1 &= y \\
+	a_{n+2} &= a_{n} \cdot a_{n+1} \\
+\end{align*}
+
+Using the braid word of a $T(3,p)$-torus knot, we identified the quandle coloring as satisfying the following recurrence relation. 
+\begin{align*}
+	a_0 &= x \\
+	a_1 &= y \\
+	a_2 &= z \\
+\end{align*}
+\begin{align*}
+	a_{n} &= a_{n-3} \triangleleft a_{n-2} \\
+	a_{n-1} &= a_{n-4} \triangleleft a_{n-2} \\
+	0 &= (n)mod(2)
+\end{align*}
+
+Here, there recurrence relation for odd and even values of $n$ are not equivalent. Thus, the recurrence relation matrix, $A$, for the $T(3, p)$ Alexander Quandle has two forms. $A_{0}$ for calculating $a_{n}$ when n $mod(2) = 0$.  $A_{1}$ is for calculating $a_{n}$ when n $mod(2) = 1$:
+
+\[ A_{0} = 
+\left[ \begin{array}{ccc}
+q-1 & q & 0 \\
+q-1 & 0 & q \\
+1 & 0 & 0 \\
+\end{array} \right]
+\]
+\[ A_{1} = 
+\left[ \begin{array}{ccc}
+q-1 & 0 & q \\
+q-1 & q & 0 \\
+1 & 0 & 0 \\
+\end{array} \right]
+\]
+
+If $(n)mod(2) = 0$:
+
+\[ 
+\left[ \begin{array}{ccc}
+a_{n} \\
+a_{n-1} \\
+a_{n-2} \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+q-1 & q & 0 \\
+q-1 & 0 & q \\
+1 & 0 & 0 \\
+\end{array} \right]
+\left[ \begin{array}{ccc}
+a_{n-2} \\
+a_{n-3} \\
+a_{n-4} \\
+\end{array} \right] 
+\] 
+
+If $(n)mod(2) = 1$:
+
+\[ 
+\left[ \begin{array}{ccc}
+a_{n} \\
+a_{n-1} \\
+a_{n-2} \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+q-1 & 0 & q \\
+q-1 & q & 0 \\
+1 & 0 & 0 \\
+\end{array} \right]
+\left[ \begin{array}{ccc}
+a_{n-2} \\
+a_{n-3} \\
+a_{n-4} \\
+\end{array} \right] 
+\] 
+
+
+We can start calculating successive entries in the sequence {$a_{n}$}:
+
+\[ 
+\left[ \begin{array}{ccc}
+a_{3} \\
+a_{2} \\
+a_{1} \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+q-1 & 0 & q \\
+q-1 & q & 0 \\
+1 & 0 & 0 \\
+\end{array} \right]
+\left[ \begin{array}{ccc}
+z \\
+y \\
+x \\
+\end{array} \right] 
+\] 
+
+\[ 
+\left[ \begin{array}{ccc}
+a_{4} \\
+a_{3} \\
+a_{2} \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+q-1 & q & 0 \\
+q-1 & 0 & q \\
+1 & 0 & 0 \\
+\end{array} \right]
+\left[ \begin{array}{ccc}
+q-1 & 0 & q \\
+q-1 & q & 0 \\
+1 & 0 & 0 \\
+\end{array} \right]
+\left[ \begin{array}{ccc}
+z \\
+y \\
+x \\
+\end{array} \right] 
+\] 
+
+\[ 
+\left[ \begin{array}{ccc}
+a_{n} \\
+a_{n-1} \\
+a_{n-2} \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+q-1 & q & 0 \\
+q-1 & 0 & q \\
+1 & 0 & 0 \\
+\end{array} \right] ^{n//2} 
+\left[ \begin{array}{ccc}
+q-1 & 0 & q \\
+q-1 & q & 0 \\
+1 & 0 & 0 \\
+\end{array} \right] ^{(n//2) + n mod(2)}
+\left[ \begin{array}{ccc}
+z \\
+y \\
+x \\
+\end{array} \right] 
+\] 
+
+\[ 
+\left[ \begin{array}{ccc}
+a_{n} \\
+a_{n-1} \\
+a_{n-2} \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+q-1 & 0 & q \\
+q-1 & q & 0 \\
+1 & 0 & 0 \\
+\end{array} \right] ^{(n)mod(p)}
+\left[ \begin{array}{ccc}
+(q-1)^{2} + q(q-1) & q^{2} & (q-1)q \\
+(q-1)^{2} + q & 0 & (q-1)q \\
+q-1 & 0 & q \\
+\end{array} \right] ^{n//2} 
+\left[ \begin{array}{ccc}
+z \\
+y \\
+x \\
+\end{array} \right] 
+\] 
+
+Replicating the calculations of the $T(p,2)$ Alexander quandle equivalence relations, you can find the following equivalence relations:
+
+\begin{align*}
+	x \equiv P(x,y,z,q) & \mod{p} \\
+	y \equiv P(x,y,z,q) & \mod{p} \\
+	z \equiv P(x,y,z,q) & \mod{p} \\
+\end{align*}
+
+Given the complexity of the diagonal of $A^{p}$, we were unable to find a simplified form for 
+
+\[ A^{n}
+=
+\left[ \begin{array}{ccc}
+q-1 & 0 & q \\
+q-1 & q & 0 \\
+1 & 0 & 0 \\
+\end{array} \right] ^{(n)mod(2)}
+\left[ \begin{array}{ccc}
+(q-1)^{2} + q(q-1) & q^{2} & (q-1)q \\
+(q-1)^{2} + q & 0 & (q-1)q \\
+q-1 & 0 & q \\
+\end{array} \right] ^{n//2} 
+\]
+
+We suspect there are alternative or brute force methods available to solve the $T(p,3)$ Alexander quandle equivalence relations.  We have not calculated the explicit solution in terms of $q$ for this equivalence set due to computational capacity. Additional endeavors in efficient computing or decomposition of $A^{n}$ are needed to find a timely solution to the equivalence set for the $T(p,3)$ Alexander quandle representations. 
+
+
+\section{Conclusions: Quandle Coloring of the T(p,q)-torus knot}\label{sec:2ntorus}
+Although further calculations can be done to solve for $q$ in 
+\begin{align*}
+	x \equiv P(x,y,z,q) & \mod{p} \\
+	y \equiv P(x,y,z,q) & \mod{p} \\
+	z \equiv P(x,y,z,q) & \mod{p} \\
+\end{align*}
+we were able to define a process for finding the $Z_{p,q}$ Quandle Colorings of T(p, 3) and T(p,2) torus knots. By (1) finding the recurrence relation for quandle labeling of a T(p,q) torus knot, (2) representing the recurrence relation in terms of the alexander quandle, (3) constructiing a recurrence relation matrix,  (4) setting the quandle labeling equivalence relations ($a_{0} \equiv P(a_{0},...,a_{p},q) \mod{p}$) , and (5) solving for $q$ across $\forall x,y \in \mathbb{Z}_n$, we have defined a reasonable process for finding the $Z_{p,q}$ Quandle Colorings of $T(p,q)$ torus knots. 
+
 \section{Further Questions}\label{fqs}
 
 \begin{enumerate}
