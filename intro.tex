@@ -23,6 +23,8 @@ We set our notation for this manuscript in this section
     sense that if $a$ is an arc between crossings $c_1$ and $c_2$ then $\zeta_d(c_1) = (\alpha_1, a)$ and $\zeta_d(c_2) = (a, \alpha_2)$ for
     $alpha_i \in \A(d)$. For instance, for a braid diagram (as in Figure~\ref{fig:braid_diagram}), the first element of $\zeta_d(c)$ is always the arc on the left of the crossing,
     and the second element is the arc on the right of the crossing.
+  \item We denote the remainder of a number $n$ when divided by $k$ as $n\%k$.
+  \item We denote $//$ to mean floor division.
 \end{itemize}
 
 
@@ -106,7 +108,8 @@ $$ 2x - y - z = 0 \mod p $$
 
 \subsection{Quandle Coloring}
 
-(TODO: Complete the description)
-We say that a knot is $Z_{p,q}$ colorable if for some unit $q \in \mathbb{Z}_p$ there is a labeling of strands so that
+We say that a knot $K$ is $Z_{p,q}$ colorable if for some unit $q \in \mathbb{Z}_p$ every strand in the projectio of $K$ can be labeled using numbers $0$ to $p-1$ such that at each crossing we have:
+
+$$qx - (1-q)y - z \equiv 0 \mod p $$ 
 
 \end{document}
