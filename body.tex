@@ -231,7 +231,7 @@ y \frac{q^{p} + (-1)^{p+1}}{q+1} + x \frac{q^{p} + (-1)^{p}(q)}{q+1} \\
 
 Which confirms
 
-$$x = \frac{(-1)^nqx+q^nx+(-1)^{n+1}y+q^ny}{1+q}mod(p) $$
+$$x = \frac{(-1)^nqx+q^nx+(-1)^{n+1}y+q^ny}{1+q} \mod p $$
 
 Because we are restricting ourselves to the quandle colorings of knots $n$ must be odd. We can then simplify the congruences to the following:
 
@@ -242,17 +242,17 @@ Because we are restricting ourselves to the quandle colorings of knots $n$ must 
 
 From this point, we can arrive upon the $Z_{p,q}$ quandle colorings of any $T(2, p)$ torus knot. Find all $q$  satisfying the equivalence relation above $\forall x,y \in \mathbb{Z}_n$
 
-\section{Quandle Coloring of the (2,q)-torus knot}\label{sec:2ntorus}
+\section{Quandle Coloring of the (3,q)-torus knot}\label{sec:2ntorus}
 We first restricted ourselves to $T(2,p)$-torus knots. Conveniently, we were able to derive an easily diagonalizable recurrence relation matrix, $A$. Now, we are going to try and extend this $Z_{p,q}$ quandle coloring to all $T(p,3)$ knots. 
 
 Remember, the $(2,n)$-torus knot satisfies the following recurrence relation:
 \begin{align*}
 	a_0 &= x \\
 	a_1 &= y \\
-	a_{n+2} &= a_{n} \cdot a_{n+1} \\
+	a_{n+2} &= a_{n} \uc a_{n+1} \\
 \end{align*}
 
-Using the braid word of a $T(3,p)$-torus knot, we identified the quandle coloring as satisfying the following recurrence relation. 
+Using the braid word of a $T(3,p)$-torus knot, the quandle coloring satisfies two recurrence relations that depending on the parity of $n$: 
 \begin{align*}
 	a_0 &= x \\
 	a_1 &= y \\
@@ -261,10 +261,9 @@ Using the braid word of a $T(3,p)$-torus knot, we identified the quandle colorin
 \begin{align*}
 	a_{n} &= a_{n-3} \triangleleft a_{n-2} \\
 	a_{n-1} &= a_{n-4} \triangleleft a_{n-2} \\
-	0 &= (n)mod(2)
 \end{align*}
 
-Here, there recurrence relation for odd and even values of $n$ are not equivalent. Thus, the recurrence relation matrix, $A$, for the $T(3, p)$ Alexander Quandle has two forms. $A_{0}$ for calculating $a_{n}$ when n $mod(2) = 0$.  $A_{1}$ is for calculating $a_{n}$ when n $mod(2) = 1$:
+Here, there recurrence relation for odd and even values of $n$ are not equivalent. Thus, the recurrence relation matrix, $A$, for the $T(3, p)$ Alexander Quandle has two forms. $A_{0}$ for calculating $a_{n}$ when n $n \equiv 0 \mod 2$. $A_{1}$ is for calculating $a_{n}$ when $n \equiv 1 \mod 2$:
 
 \[ A_{0} = 
 \left[ \begin{array}{ccc}
@@ -281,7 +280,7 @@ q-1 & q & 0 \\
 \end{array} \right]
 \]
 
-If $(n)mod(2) = 0$:
+If $n \equiv 0 \mod 2$:
 
 \[ 
 \left[ \begin{array}{ccc}
@@ -302,7 +301,7 @@ a_{n-4} \\
 \end{array} \right] 
 \] 
 
-If $(n)mod(2) = 1$:
+If $n \equiv 1 \mod 2$:
 
 \[ 
 \left[ \begin{array}{ccc}
@@ -442,7 +441,6 @@ q-1 & 0 & q \\
 \]
 
 We suspect there are alternative or brute force methods available to solve the $T(p,3)$ Alexander quandle equivalence relations.  We have not calculated the explicit solution in terms of $q$ for this equivalence set due to computational capacity. Additional endeavors in efficient computing or decomposition of $A^{n}$ are needed to find a timely solution to the equivalence set for the $T(p,3)$ Alexander quandle representations. 
-
 
 \section{Conclusions: Quandle Coloring of the T(p,q)-torus knot}\label{sec:2ntorus}
 Although further calculations can be done to solve for $q$ in 
