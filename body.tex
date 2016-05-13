@@ -36,6 +36,203 @@ We now know an explicit formula for $a_n$ so we may substitute it in accordingly
 	y &\equiv \frac{(-1)^{n+1}qx+q^{n+1}x+(-1)^{n+2}y+q^{n+1}y}{1+q} & \mod{p} \\
 \end{align*}
 
+From another representation of $a_{n}$ we can calculate an alternative equivalence relation
+
+$$a_{0} = a_{p}, a_{1} = a_{p+1}$$
+$$x = a_{p-2} + (1-q)a_{p-1}$$
+$$ y = a_{p-1} + (1-q)a_{p}$$
+
+To calculate $a_{p}$, we must find the matrix representation of 
+$$ a_{n} = (q)a_{n-2} + (1-q)a_{n-1} $$
+
+
+
+\[ 
+\left[ \begin{array}{ccc}
+a_{n} \\
+a_{n-1} \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+q & q-1 \\
+0 & 1 \\
+\end{array} \right]
+\left[ \begin{array}{ccc}
+ a_{n-2}\\
+a_{n-1} \\
+\end{array} \right]
+\] 
+
+\[ 
+\left[ \begin{array}{ccc}
+a_{1} \\
+a_{0} \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+y \\
+x \\
+\end{array} \right]
+\] 
+
+\[ 
+\left[ \begin{array}{ccc}
+a_{n} \\
+a_{n-1} \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+q-1 & q \\
+1 & 0 \\
+\end{array} \right] ^{n-1}
+\left[ \begin{array}{ccc}
+ a_{n-1}\\
+a_{n-2} \\
+\end{array} \right]
+\] 
+
+Thus:
+
+\[ 
+\left[ \begin{array}{ccc}
+y \\
+x \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+a_{p+1} \\
+a_{p} \\
+\end{array} \right]
+\] 
+
+\[ 
+\left[ \begin{array}{ccc}
+y \\
+x \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+q & q-1 \\
+0 & 1 \\
+\end{array} \right] ^{p}
+\left[ \begin{array}{ccc}
+y \\
+x \\
+\end{array} \right]
+\] 
+
+\[ 
+\left[ \begin{array}{ccc}
+y \\
+x \\
+\end{array} \right] 
+=
+A^{p}
+\left[ \begin{array}{ccc}
+y \\
+x \\
+\end{array} \right]
+\] 
+
+
+\[ A^{p} = 
+\left[ \begin{array}{ccc}
+q-1 & q \\
+1 & 0 \\
+\end{array} \right] ^{p}
+=
+PD^{p}P^{-1}
+\] 
+\[ A = 
+\left[ \begin{array}{ccc}
+q-1 & q \\
+1 & 0 \\
+\end{array} \right]
+=
+PDP^{-1}
+\] 
+\[ P = 
+\left[ \begin{array}{ccc}
+-1 & q \\
+1 & 1 \\
+\end{array} \right]
+, P^{-1} =
+\left[ \begin{array}{ccc}
+-(q+1)^{-1} & q(q+1)^{-1} \\
+(q+1)^{-1} & (q+1)^{-1} \\
+\end{array} \right]
+, D = 
+\left[ \begin{array}{ccc}
+-1 & 0 \\
+0 & q \\
+\end{array} \right]
+\] 
+\[ A^{p}
+=
+\left[ \begin{array}{ccc}
+-1 & q \\
+1 & 1 \\
+\end{array} \right]
+\left[ \begin{array}{ccc}
+-1 & 0 \\
+0 & q \\
+\end{array} \right] ^{p}
+\left[ \begin{array}{ccc}
+-(q+1)^{-1} & q(q+1)^{-1} \\
+(q+1)^{-1} & (q+1)^{-1} \\
+\end{array} \right]
+\]
+\[ A^{p}
+=
+\left[ \begin{array}{ccc}
+-1 & q \\
+1 & 1 \\
+\end{array} \right]
+\left[ \begin{array}{ccc}
+-1 & 0 \\
+0 & q^{p} \\
+\end{array} \right] 
+\left[ \begin{array}{ccc}
+-(q+1)^{-1} & q(q+1)^{-1} \\
+(q+1)^{-1} & (q+1)^{-1} \\
+\end{array} \right]
+\]
+
+\[
+A^{p}=
+\left[ \begin{array}{ccc}
+\frac{q^{p+1} + (-1)^{p+1}}{q+1} & \frac{q^{p+1} + (-1)^{p}(q)}{q+1} \\
+\frac{q^{p} + (-1)^{p+1}}{q+1} & \frac{q^{p} + (-1)^{p}(q)}{q+1} \\
+\end{array} \right]
+\]
+
+\[
+\left[ \begin{array}{ccc}
+y \\
+x \\
+\end{array} \right]=
+A^{p}
+\left[ \begin{array}{ccc}
+y \\
+x \\
+\end{array} \right]
+\]
+
+\[
+\left[ \begin{array}{ccc}
+y \\
+x \\
+\end{array} \right]=
+\left[ \begin{array}{ccc}
+y \frac{q^{p+1} + (-1)^{p+1}}{q+1} + x \frac{q^{p+1} + (-1)^{p}(q)}{q+1} \\
+y \frac{q^{p} + (-1)^{p+1}}{q+1} + x \frac{q^{p} + (-1)^{p}(q)}{q+1} \\
+\end{array} \right]
+\]
+
+Which confirms
+
+$$x = \frac{(-1)^nqx+q^nx+(-1)^{n+1}y+q^ny}{1+q}mod(p) $$
+
 Because we are restricting ourselves to the quandle colorings of knots $n$ must be odd. We can then simplify the congruences to the following:
 
 \begin{align*}
