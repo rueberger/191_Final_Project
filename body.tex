@@ -263,7 +263,7 @@ Using the braid word of a $T(3,p)$-torus knot, the quandle coloring satisfies tw
 	a_{n-1} &= a_{n-4} \triangleleft a_{n-2} \\
 \end{align*}
 
-Here, there recurrence relation for odd and even values of $n$ are not equivalent. Thus, the recurrence relation matrix, $A$, for the $T(3, p)$ Alexander Quandle has two forms. $A_{0}$ for calculating $a_{n}$ when n $n \equiv 0 \mod 2$. $A_{1}$ is for calculating $a_{n}$ when $n \equiv 1 \mod 2$:
+Here, there recurrence relation for odd and even values of $n$ are not equivalent. Thus, the recurrence relation matrix, $A$, for the $T(3, p)$ Alexander Quandle has two forms. $A_{0}$ for calculating $a_{n}$ when $n \equiv 0 \mod 2$. $A_{1}$ is for calculating $a_{n}$ when $n \equiv 1 \mod 2$:
 
 \[ A_{0} = 
 \left[ \begin{array}{ccc}
@@ -384,7 +384,7 @@ q-1 & 0 & q \\
 q-1 & 0 & q \\
 q-1 & q & 0 \\
 1 & 0 & 0 \\
-\end{array} \right] ^{(n//2) + n mod(2)}
+\end{array} \right] ^{(n//2) + n\%2)}
 \left[ \begin{array}{ccc}
 z \\
 y \\
@@ -403,7 +403,7 @@ a_{n-2} \\
 q-1 & 0 & q \\
 q-1 & q & 0 \\
 1 & 0 & 0 \\
-\end{array} \right] ^{(n)mod(p)}
+\end{array} \right] ^{n\%p}
 \left[ \begin{array}{ccc}
 (q-1)^{2} + q(q-1) & q^{2} & (q-1)q \\
 (q-1)^{2} + q & 0 & (q-1)q \\
@@ -432,7 +432,7 @@ Given the complexity of the diagonal of $A^{p}$, we were unable to find a simpli
 q-1 & 0 & q \\
 q-1 & q & 0 \\
 1 & 0 & 0 \\
-\end{array} \right] ^{(n)mod(2)}
+\end{array} \right] ^{n\%2}
 \left[ \begin{array}{ccc}
 (q-1)^{2} + q(q-1) & q^{2} & (q-1)q \\
 (q-1)^{2} + q & 0 & (q-1)q \\
