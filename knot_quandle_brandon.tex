@@ -1,0 +1,309 @@
+%% This is file `elsarticle-template-1-num.tex',
+%%
+%% Copyright 2009 Elsevier Ltd
+%%
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%%
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%%
+%% Template article for Elsevier's document class `elsarticle'
+%% with numbered style bibliographic references
+%%
+%% $Id: elsarticle-template-1-num.tex 149 2009-10-08 05:01:15Z rishi $
+%% $URL: http://lenova.river-valley.com/svn/elsbst/trunk/elsarticle-template-1-num.tex $
+%%
+\documentclass[preprint,12pt]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn]{elsarticle}
+%% \documentclass[final,3p,times]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn]{elsarticle}
+%% \documentclass[final,5p,times]{elsarticle}
+%% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+%% The graphicx package provides the includegraphics command.
+\usepackage{graphicx}
+\graphicspath{ {/Users/brandonflannery/src/math191/jones_poly_knots/images/} }
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+%% The amsthm package provides extended theorem environments
+%% \usepackage{amsthm}
+
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers after \end{frontmatter}.
+\usepackage{lineno}
+
+%% natbib.sty is loaded by default. However, natbib options can be
+%% provided with \biboptions{...} command. Following options are
+%% valid:
+
+%%   round  -  round parentheses are used (default)
+%%   square -  square brackets are used   [option]
+%%   curly  -  curly braces are used      {option}
+%%   angle  -  angle brackets are used    <option>
+%%   semicolon  -  multiple citations separated by semi-colon
+%%   colon  - same as semicolon, an earlier confusion
+%%   comma  -  separated by comma
+%%   numbers-  selects numerical citations
+%%   super  -  numerical citations as superscripts
+%%   sort   -  sorts multiple citations according to order in ref. list
+%%   sort&compress   -  like sort, but also compresses numerical citations
+%%   compress - compresses without sorting
+%%
+%% \biboptions{comma,round}
+
+% \biboptions{}
+
+\journal{Journal Name}
+
+\begin{document}
+
+\begin{frontmatter}
+
+%% Title, authors and addresses
+
+\title{Jones Polynomial Generalizations for Recursive Knot Structure Sequences}
+
+%% use the tnoteref command within \title for footnotes;
+%% use the tnotetext command for the associated footnote;
+%% use the fnref command within \author or \address for footnotes;
+%% use the fntext command for the associated footnote;
+%% use the corref command within \author for corresponding author footnotes;
+%% use the cortext command for the associated footnote;
+%% use the ead command for the email address,
+%% and the form \ead[url] for the home page:
+%%
+%% \title{Title\tnoteref{label1}}
+%% \tnotetext[label1]{}
+%% \author{Name\corref{cor1}\fnref{label2}}
+%% \ead{email address}
+%% \ead[url]{home page}
+%% \fntext[label2]{}
+%% \cortext[cor1]{}
+%% \address{Address\fnref{label3}}
+%% \fntext[label3]{}
+
+
+%% use optional labels to link authors explicitly to addresses:
+%% \author[label1,label2]{<author name>}
+%% \address[label1]{<address>}
+%% \address[label2]{<address>}
+
+\author{Brandon Flannery}
+\author{Christopher Sumnicht}
+
+
+\address{University of California, Berkeley}
+
+\begin{abstract}
+%% Text of abstract
+\end{abstract}
+
+\begin{keyword}
+Knot Theory \sep  \sep 
+%% keywords here, in the form: keyword \sep keyword
+
+%% MSC codes here, in the form: \MSC code \sep code
+%% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+%%
+%% Start line numbering here if you want
+%%
+\linenumbers
+
+%% main text
+\section{Quandle Coloring of the T(2,p)-torus knot}\label{sec:2ntorus}
+We first restrict ourselves to $(q,p)$-torus where $q = 2$. Furthermore we only concern $Z_p$ when $p > 2$ is prime to ensure that every element of $Z_p$ is a unit and every so every element has an inverse.
+
+The $(2,p)$-torus knot satisfies the following recurrence relation:
+\begin{itemize}
+	\item $a_{0}= x$, $a_{1} = y$
+	\item $a_{n} = a_{n-2} \triangleleft a_{n-1}$
+	\item $a_{0} = a_{p}$, $a_{1} = a_{p+1}$
+\end{itemize}
+
+We can then substitute the Alexander quandle to conclude:
+
+$$a \triangleleft b = q(a) + (1-q)b$$
+$$a_{n} = a_{n-2} \triangleleft a_{n-1}$$
+$$ a_{n} = a_{n-2} + (1-q)a_{n-1} $$
+
+From this representation of $a_{n}$ we can calculate an alternative equivalence relation
+
+$$a_{0} = a_{p}, a_{1} = a_{p+1}$$
+$$x = a_{p-2} + (1-q)a_{p-1}$$
+$$ y = a_{p-1} + (1-q)a_{p}$$
+
+To calculate $a_{p}$, we must find the matrix representation of 
+$$ a_{n} = a_{n-2} + (1-q)a_{n-1} $$
+
+
+
+\[ 
+\left[ \begin{array}{ccc}
+a_{n} \\
+a_{n-1} \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+q & q-1 \\
+0 & 1 \\
+\end{array} \right]
+\left[ \begin{array}{ccc}
+ a_{n-2}\\
+a_{n-1} \\
+\end{array} \right]
+\] 
+
+\[ 
+\left[ \begin{array}{ccc}
+a_{1} \\
+a_{0} \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+y \\
+x \\
+\end{array} \right]
+\] 
+
+\[ 
+\left[ \begin{array}{ccc}
+a_{n} \\
+a_{n-1} \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+q & q-1 \\
+0 & 1 \\
+\end{array} \right] ^{n-1}
+\left[ \begin{array}{ccc}
+ a_{n-2}\\
+a_{n-1} \\
+\end{array} \right]
+\] 
+
+Thus:
+
+\[ 
+\left[ \begin{array}{ccc}
+y \\
+x \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+a_{p+1} \\
+a_{p} \\
+\end{array} \right]
+\] 
+
+\[ 
+\left[ \begin{array}{ccc}
+y \\
+x \\
+\end{array} \right] 
+=
+\left[ \begin{array}{ccc}
+q & q-1 \\
+0 & 1 \\
+\end{array} \right] ^{p}
+\left[ \begin{array}{ccc}
+x \\
+y \\
+\end{array} \right]
+\] 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------
+\begin{figure}[h]
+\caption{Figure caption}
+\end{figure}
+
+Integer risus dui, condimentum et gravida vitae, adipiscing et enim. Aliquam erat volutpat. Pellentesque diam sapien, egestas eget gravida ut, tempor eu nulla. Vestibulum mollis pretium lacus eget venenatis. Fusce gravida nisl quis est molestie eu luctus ipsum pretium. Maecenas non eros lorem, vel adipiscing odio. Etiam dolor risus, mattis in pellentesque id, pellentesque eu nibh. Mauris nec ante at orci ultricies placerat ac non massa. Aenean imperdiet, ante eu sollicitudin vestibulum, dolor felis dapibus arcu, sit amet fermentum urna nibh sit amet mauris. Suspendisse adipiscing mollis dolor quis lobortis.
+
+\begin{equation}
+\label{eq:emc}
+e = mc^2
+\end{equation}
+
+\section{The Second Section}
+\label{S:2}
+
+Reference to Section \ref{S:1}. Etiam congue sollicitudin diam non porttitor. Etiam turpis nulla, auctor a pretium non, luctus quis ipsum. Fusce pretium gravida libero non accumsan. Donec eget augue ut nulla placerat hendrerit ac ut mi. Phasellus euismod ornare mollis. Proin tempus fringilla ultricies. Donec pretium feugiat libero quis convallis. Nam interdum ante sed magna congue eu semper tellus sagittis. Curabitur eu augue elit.
+
+Aenean eleifend purus et massa consequat facilisis. Etiam volutpat placerat dignissim. Ut nec nibh nulla. Aliquam erat volutpat. Nam at massa velit, eu malesuada augue. Maecenas sit amet nunc mauris. Maecenas eu ligula quis turpis molestie elementum nec at est. Sed adipiscing neque ac sapien viverra sit amet vestibulum arcu rhoncus.
+
+Vivamus pharetra nibh in orci euismod congue. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque lacus diam, congue vel laoreet id, iaculis eu sapien. In id risus ac leo pellentesque pellentesque et in dui. Etiam tincidunt quam ut ante vestibulum ultricies. Nam at rutrum lectus. Aenean non justo tortor, nec mattis justo. Aliquam erat volutpat. Nullam ac viverra augue. In tempus venenatis nibh quis semper. Maecenas ac nisl eu ligula dictum lobortis. Sed lacus ante, tempor eu dictum eu, accumsan in velit. Integer accumsan convallis porttitor. Maecenas pretium tincidunt metus sit amet gravida. Maecenas pretium blandit felis, ac interdum ante semper sed.
+
+In auctor ultrices elit, vel feugiat ligula aliquam sed. Curabitur aliquam elit sed dui rhoncus consectetur. Cras elit ipsum, lobortis a tempor at, viverra vitae mi. Cras sed urna sed eros bibendum faucibus. Morbi vel leo orci, vel faucibus orci. Vivamus urna nisl, sodales vitae posuere in, tempus vel tellus. Donec magna est, luctus non commodo sit amet, placerat et enim.
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+%% \appendix
+
+%% \section{}
+%% \label{}
+
+%% References
+%%
+%% Following citation commands can be used in the body text:
+%% Usage of \cite is as follows:
+%%   \cite{key}          ==>>  [#]
+%%   \cite[chap. 2]{key} ==>>  [#, chap. 2]
+%%   \citet{key}         ==>>  Author [#]
+
+%% References with bibTeX database:
+
+\bibliographystyle{model1-num-names}
+\bibliography{sample.bib}
+
+%% Authors are advised to submit their bibtex database files. They are
+%% requested to list a bibtex style file in the manuscript if they do
+%% not want to use model1-num-names.bst.
+
+%% References without bibTeX database:
+
+% \begin{thebibliography}{00}
+
+%% \bibitem must have the following form:
+%%   \bibitem{key}...
+%%
+
+% \bibitem{}
+
+% \end{thebibliography}
+
+
+\end{document}
+
+%%
+%% End of file `elsarticle-template-1-num.tex'.
