@@ -6,34 +6,60 @@
 
 Quandles are algebraic structures that are deeply connected to knots. This connection is most strikingly presented by considering the strands of a knot diagrams as objects acted on by the operation of
 undercrossing, $\uc$. A set of axioms that $\uc$ must satisfy in order to be a `knot diagram invariant' (in a sense we will define shortly) can be easily derived from the Reidemeister moves, as shown in
-Section~\ref{sec:quandle_coloring}.
+Section~\ref{sec:quandle_axioms}.
 
 But this is not the only way that quandles can be seen to be deeply connected to knots - the fundamental group for a knot $K$, $\pi_1(\R^3 \setminus K)$ is a quandle!
 
+\subsection{Notation}
 
-\subsection{Labeling knot diagrams with quandles}
-\label{sec:quandle_coloring}
+We set our notation for this manuscript in this section
+
+\begin{itemize}
+  \item We refer to the set of possible knot diagrams for a given knot $K$ as $\diag(K)$.
+  \item We refer to the set of arcs in a knot diagram $d \in \diag(K)$ as $\A(d)$
+  \item Let $\C(d)$ denote the set of crossings for a diagram $d$
+  \item Let $\zeta_d: \C(d) \to \A(d) \times \A(d)$ denote the natural map that maps each crossing onto the pair of
+    \emph{undercrossing} arcs. We require that $\zeta_d$ preserve order in the undercrossing arcs in the
+    sense that if $a$ is an arc between crossings $c_1$ and $c_2$ then $\zeta_d(c_1) = (\alpha_1, a)$ and $\zeta_d(c_2) = (a, \alpha_2)$ for
+    $alpha_i \in \A(d)$. For instance, for a braid diagram (as in Figure~\ref{fig:braid_diagram}), the first element of $\zeta_d(c)$ is always the arc on the left of the crossing,
+    and the second element is the arc on the right of the crossing.
+\end{itemize}
+
 
 \begin{figure}[h]
-    \centering
-    \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{R1}
-        \caption{R1}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{R2}
-        \caption{R2}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc.
-    %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{R3}
-        \caption{R3}
-    \end{subfigure}
-    \caption{The quandle axioms are chosen such that quandle colorings are naturally diagram invariant. Figures reproduced from~\cite{Cusick}}\label{fig:quandle_axioms}
+  \centering
+  \includegraphics[width=0.7\textwidth]{braid_diagram}
+  \caption{Example of a braid diagram}\label{fig:braid_diagram}
 \end{figure}
+
+
+
+\subsection{Quandles generalize coloring}
+
+A $p$ coloring of a knot diagram $d \in \diag(K)$ is a mapping $C: \A(d) \to Z_p$
+
+\subsection{Deriving the quandle axioms from the Reidemeister moves}
+\label{sec:quandle_axioms}
+
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{R1}
+  \caption{R1. Figure reproduced from~\cite{Cusick}}\label{fig:r1}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{R2}
+  \caption{R2. Figure reproduced from~\cite{Cusick}}\label{fig:r2}
+\end{figure}
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{R3}
+  \caption{R3. Figure reproduced from~\cite{Cusick}}\label{fig:r3}
+\end{figure}
+
 
 
 \subsection{Involutary Quandle}
