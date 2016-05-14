@@ -12,9 +12,9 @@
   \caption{Visual representation of the recurrence relation $a_{n+2} = a_{n} \uc a_{n+1}$~\cite{Cusick}}\label{fig:2q}
 \end{figure}
 
-We first restrict ourselves to $(r,n)$-torus where $r = 2$. Secondly, we only concern $Z_p$ when $p > 2$ is prime.
+We first restrict ourselves to $(r,n)$-torus where $r = 2$. Secondly, we only concern ourselves with $\mathbb{Z}_p$ when $p > 2$ is prime.
 
-The $(2,n)$-torus knot satisfies the following recurrence relation:
+In Figure ~\ref{fig:2q}, we can see that the $(2,n)$-torus knot satisfies the following recurrence relation:
 \begin{align*}
 	a_0 &= x \\
 	a_1 &= y \\
@@ -25,9 +25,10 @@ We can then substitute the Alexander quandle to conclude:
 
 $$ a_{n+2} = qa_{n} + (1-q)b_{n+1} $$
 
-Solving for $a_n$ we get:
+Solving for\footnotetext{We will provide a proof of this in the next subsection: Matrix Representation}
+ $a_n$ gives:
 
-$$ a_n = \frac{(-1)^nqx+q^nx+(-1)^{n+1}y+q^ny}{1+q} $$
+$$a_n = \frac{(-1)^nqx+q^nx+(-1)^{n+1}y+q^ny}{1+q}$$
 
 To determine whether a knot is $\mathbb{Z}_{p,q}$ colorable we must solve for the system of equations so that $\forall x,y \in \mathbb{Z}_n$ the following holds:
 
