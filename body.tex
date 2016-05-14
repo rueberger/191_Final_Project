@@ -25,7 +25,7 @@ We can then substitute the Alexander quandle to conclude:
 
 $$ a_{n+2} = qa_{n} + (1-q)b_{n+1} $$
 
-Solving for\footnotetext{We will provide a proof of this in the next subsection: Matrix Representation}
+Solving for\footnote{We will provide a proof of this in the next subsection: Matrix Representation}
  $a_n$ gives:
 
 $$a_n = \frac{(-1)^nqx+q^nx+(-1)^{n+1}y+q^ny}{1+q}$$
@@ -452,14 +452,14 @@ q-1 & 0 & q \\
 
 We suspect there are alternative or brute force methods available to solve the $T(p,3)$ Alexander quandle equivalence relations.  We have not calculated the explicit solution in terms of $q$ for this equivalence set due to computational capacity. Additional endeavors in efficient computing or decomposition of $A^{n}$ are needed to find a timely solution to the equivalence set for the $T(p,3)$ Alexander quandle representations.
 
-\section{Conclusions: Quandle Coloring of the T(p,q)-torus knot}\label{sec:pntorus}
-Although further calculations can be done to solve for $q$ in
-\begin{align*}
-	x \equiv P(x,y,z,q) & \mod{p} \\
-	y \equiv P(x,y,z,q) & \mod{p} \\
-	z \equiv P(x,y,z,q) & \mod{p} \\
-\end{align*}
-we were able to define a process for finding the $Z_{p,q}$ Quandle Colorings of T(p, 3) and T(p,2) torus knots. By (1) finding the recurrence relation for quandle labeling of a T(p,q) torus knot, (2) representing the recurrence relation in terms of the alexander quandle, (3) constructiing a recurrence relation matrix,  (4) setting the quandle labeling equivalence relations ($a_{0} \equiv P(a_{0},...,a_{p},q) \mod{p}$) , and (5) solving for $q$ across $\forall x,y \in \mathbb{Z}_n$, we have defined a reasonable process for finding the $Z_{p,q}$ Quandle Colorings of $T(p,q)$ torus knots.
+%% \section{Conclusions: Quandle Coloring of the T(p,q)-torus knot}\label{sec:pntorus}
+%% Although further calculations can be done to solve for $q$ in
+%% \begin{align*}
+%% 	x \equiv P(x,y,z,q) & \mod{p} \\
+%% 	y \equiv P(x,y,z,q) & \mod{p} \\
+%% 	z \equiv P(x,y,z,q) & \mod{p} \\
+%% \end{align*}
+%% we were able to define a process for finding the $Z_{p,q}$ Quandle Colorings of T(p, 3) and T(p,2) torus knots. By (1) finding the recurrence relation for quandle labeling of a T(p,q) torus knot, (2) representing the recurrence relation in terms of the alexander quandle, (3) constructiing a recurrence relation matrix,  (4) setting the quandle labeling equivalence relations ($a_{0} \equiv P(a_{0},...,a_{p},q) \mod{p}$) , and (5) solving for $q$ across $\forall x,y \in \mathbb{Z}_n$, we have defined a reasonable process for finding the $Z_{p,q}$ Quandle Colorings of $T(p,q)$ torus knots.
 
 \section{A quandle relation for $T(p,q)$ knots}
 
@@ -487,20 +487,43 @@ With this setup, we easily derive the following recurrence relation
    \label{eq:pq_recurrence}
    z^{n+1}_l = \left\{
    \begin{matrix}
-        z^n_{l+1} \uc O_n \text{ if } l < p \\
-        z^n_1 \text{ if } l = p
+        z^n_{l+1} \uc O_n &\text{ if } l < p \\
+        z^n_1 &\text{ if } l = p
    \end{matrix}
    \right.
 \end{equation}
 
+Furthermore it is easily seen that
+
+\begin{equation}
+   O_n = (\ldots((z_n \uc O_1) \uc O_2) \ldots ) \uc O_{n-1}
+\end{equation}
+
+Through successive application of the third quandle axiom (Equation~\ref{eq:ax3}), or alternatively, by playing with the knot diagram\footnote{Since quandles by construction satisfy the Redeimeister moves, you can do algebra
+        on quandle colorings visually by playing with the knot diagram! Cool!} this can be seen to simplify into the possibly more transparent form
+
+\begin{equation}
+   O_n = (z_n \uc O_1) \uc (O_2 \uc O_{n -1}) \uc \ldots \uc (O_{n - 2} \uc O_{n - 1})
+\end{equation}
+
+Despite our best efforts, these relations resisted further simplification. Where we more skilled with Mathematica or had more time we would have substituted the $Z_{n,q}$ undercrossing operation into these relations
+     and attempted to fully solve (by setting $z^q_{i} = z^0_{i}$) and simplify the generalized equivalence relation given in Equation~\ref{eq:bp_recurrence}. As it stands, this relation gives a prescription for
+     determining if $T(r,k)$ is $\Z_{n,q}$ colorable, and for counting colorings. It shouldn't be more than a day's effort to use this relation to write such a program.
+
+However, in order to exercise our general quandle relation, we used it to compute another relation (over $\Z_n$) for $T(2, k)$ knots. We omit the calculation, as it is fairly straightforward. The relation is, for fixed $p$
+      and $q$ a unit $\Z_n$
+
+\begin{align}
+    z_l &= q^2 z_{l + 2} + q(1 - q) z_2 + (1 - q) z_1 \text{ for } l < p -1\\
+    z_{p - 1} &= (1 - q + q^2) z_1 + (1 + q - q^2) z_2 \\
+    z_p  &= q z_2 + (1 - q) z_2
+\end{align}
 
 \section{Further Questions}\label{fqs}
 
 \begin{enumerate}
-	\item Consider what happens to $Z_{p,q}$ when $p$ is not prime.
+\item Consider what happens to $Z_{p,q}$ when $p$ is not prime.
 \end{enumerate}
 
-\bibliographystyle{abbrv}
-\bibliography{main}
 
 \end{document}
