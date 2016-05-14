@@ -3,7 +3,6 @@
 \begin{document}
 
 \section{Quandle Coloring of the (2,q)-torus knot}\label{sec:2ntorus}
-\footnotetext{We will provide a means of deriving this in the next subsection: Matrix Representation}
 
 \subsection{Recurrence Relation}
 
@@ -63,7 +62,7 @@ $$ a_{n} = (q)a_{n-2} + (1-q)a_{n-1} $$
 \left[ \begin{array}{ccc}
 a_{n} \\
 a_{n-1} \\
-\end{array} \right] 
+\end{array} \right]
 &=
 \left[ \begin{array}{ccc}
 q & q-1 \\
@@ -76,7 +75,7 @@ a_{n-1} \\
 \left[ \begin{array}{ccc}
 a_{1} \\
 a_{0} \\
-\end{array} \right] 
+\end{array} \right]
 &=
 \left[ \begin{array}{ccc}
 y \\
@@ -85,7 +84,7 @@ x \\
 \left[ \begin{array}{ccc}
 a_{n} \\
 a_{n-1} \\
-\end{array} \right] 
+\end{array} \right]
 &=
 \left[ \begin{array}{ccc}
 q-1 & q \\
@@ -103,7 +102,7 @@ Thus:
 \left[ \begin{array}{ccc}
 y \\
 x \\
-\end{array} \right] 
+\end{array} \right]
 &=
 \left[ \begin{array}{ccc}
 a_{p+1} \\
@@ -112,7 +111,7 @@ a_{p} \\
 \left[ \begin{array}{ccc}
 y \\
 x \\
-\end{array} \right] 
+\end{array} \right]
 &=
 \left[ \begin{array}{ccc}
 q & q-1 \\
@@ -125,7 +124,7 @@ x \\
 \left[ \begin{array}{ccc}
 y \\
 x \\
-\end{array} \right] 
+\end{array} \right]
 &=
 A^{p}
 \left[ \begin{array}{ccc}
@@ -135,21 +134,21 @@ x \\
 \end{align*}
 
 \begin{align*}
-A^{p} &= 
+A^{p} &=
 \left[ \begin{array}{ccc}
 q-1 & q \\
 1 & 0 \\
 \end{array} \right] ^{p}
 =
-PD^{p}P^{-1} \\ 
-A &= 
+PD^{p}P^{-1} \\
+A &=
 \left[ \begin{array}{ccc}
 q-1 & q \\
 1 & 0 \\
 \end{array} \right]
 =
-PDP^{-1} \\ 
-P &= 
+PDP^{-1} \\
+P &=
 \left[ \begin{array}{ccc}
 -1 & q \\
 1 & 1 \\
@@ -159,11 +158,11 @@ P^{-1} &=
 -(q+1)^{-1} & q(q+1)^{-1} \\
 (q+1)^{-1} & (q+1)^{-1} \\
 \end{array} \right] \\
-D &= 
+D &=
 \left[ \begin{array}{ccc}
 -1 & 0 \\
 0 & q \\
-\end{array} \right] \\ 
+\end{array} \right] \\
 A^{p}
 &=
 \left[ \begin{array}{ccc}
@@ -223,8 +222,8 @@ $$x = \frac{(-1)^nqx+q^nx+(-1)^{n+1}y+q^ny}{1+q} \mod p $$
 A $(2,n)$-torus knot $\gcd(2,n) = 1$, therefore, $n$ must be odd. We can then simplify the congruences to the following:
 
 \begin{align*}
-	x &\equiv \frac{-qx+q^nx+y+q^ny}{1+q} & \mod{p} \\
-	y &\equiv \frac{qx+q^{n+1}x-y+q^{n+1}y}{1+q} & \mod{p} \\
+	x &\equiv \frac{-qx+q^nx+y+q^ny}{1+q}  \mod{p} \\
+	y &\equiv \frac{qx+q^{n+1}x-y+q^{n+1}y}{1+q}  \mod{p} \\
 \end{align*}
 
 From this point, we can arrive upon the $Z_{p,q}$ quandle colorings of any $T(2, p)$ torus knot. Find all $q$ satisfying the equivalence relation above $\forall x,y \in \mathbb{Z}_n$
@@ -484,7 +483,7 @@ Through successive application of the third quandle axiom (Equation~\ref{eq:ax3}
 \end{equation}
 
 Despite our best efforts, these relations resisted further simplification. Where we more skilled with Mathematica or had more time we would have substituted the $Z_{n,q}$ undercrossing operation into these relations
-     and attempted to fully solve (by setting $z^q_{i} = z^0_{i}$) and simplify the generalized equivalence relation given in Equation~\ref{eq:bp_recurrence}. As it stands, this relation gives a prescription for
+     and attempted to fully solve (by setting $z^q_{i} = z^0_{i}$) and simplify the generalized equivalence relation given in Equation~\ref{eq:pq_recurrence}. As it stands, this relation gives a prescription for
      determining if $T(r,k)$ is $\Z_{n,q}$ colorable, and for counting colorings. It shouldn't be more than a day's effort to use this relation to write such a program.
 
 However, in order to exercise our general quandle relation, we used it to compute another relation (over $\Z_n$) for $T(2, k)$ knots. We omit the calculation, as it is fairly straightforward. The relation is, for fixed $p$
@@ -495,12 +494,5 @@ However, in order to exercise our general quandle relation, we used it to comput
     z_{p - 1} &= (1 - q + q^2) z_1 + (1 + q - q^2) z_2 \\
     z_p  &= q z_2 + (1 - q) z_2
 \end{align}
-
-\section{Further Questions}\label{fqs}
-
-\begin{enumerate}
-\item Consider what happens to $Z_{p,q}$ when $p$ is not prime.
-\end{enumerate}
-
 
 \end{document}

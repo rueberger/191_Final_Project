@@ -15,6 +15,7 @@
  \usepackage{bm}
  \usepackage{color}
  \usepackage[normalem]{ulem}
+ \usepackage{cite}
 
 
  \graphicspath{ {figures/}}
@@ -87,7 +88,7 @@
 
 \maketitle
 \begin{abstract}
-	Quandles are an algebraic structure equipped with axioms that mirror the Reidemeister Moves. As such they play important role in knot theory. Dihedral quandles, for instance, are used to compute the Fox $n$-coloring (or $Z_p$ coloring) of a knot. Dihedral quandles a special case of an important class of quandles known as Alexander Quandles. Furthermore, Alexander Quandles are used to compute a more generalized version of $n$-coloring known as Quandle Coloring
+	Quandles are an algebraic structure equipped with axioms that mirror the Reidemeister Moves. As such they play important role in knot theory. Dihedral quandles, for instance, are used to compute the Fox $n$-coloring (or $Z_p$ coloring) of a knot. Dihedral quandles a special case of an important class of quandles known as Alexander Quandles. Furthermore, Alexander Quandles are used to compute a more generalized version of $n$-coloring known as Quandle Coloring.
 In this paper we restrict our focus to a particular subclass of Alexander Quandles known as $Z_{n,q}$ quandles and  devise methods of efficiently determining whether a $(r,k)$-torus knot is $Z_{n,q}$ colorable.
 
 
@@ -102,9 +103,14 @@ In this paper we restrict our focus to a particular subclass of Alexander Quandl
 
 \subfile{body.tex}
 
-\subfile{conclusion.tex}
+\
+\begin{thebibliography}{9}
 
-\bibliographystyle{unsrt}
-\bibliography{main,knot_theory}
+\bibitem{Cusick}
+  Larry Cusick,
+  \emph{Knot Quandles \& Quandle knots},
+  \url{http://zimmer.csufresno.edu/{~}larryc/pubs/quandletallkpost.pdf},
+  2012
+\end{thebibliography}
 
 \end{document}
