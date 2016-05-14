@@ -3,6 +3,7 @@
 \begin{document}
 
 \section{Quandle Coloring of the (2,q)-torus knot}\label{sec:2ntorus}
+\footnotetext{We will provide a means of deriving this in the next subsection: Matrix Representation}
 
 \subsection{Recurrence Relation}
 
@@ -46,23 +47,24 @@ We now know an explicit formula for $a_n$ so we may substitute it in accordingly
 
 \subsection{Matrix Representation}
 
-From another representation of $a_{n}$ we can calculate an alternative equivalence relation
+We consider an equivalent recurrence relation:
 
-$$a_{0} = a_{p}, a_{1} = a_{p+1}$$
-$$x = a_{p-2} + (1-q)a_{p-1}$$
-$$ y = a_{p-1} + (1-q)a_{p}$$
+\begin{align*}
+	a_{0} &= a_{p} \\
+	a_{1} &= a_{p+1} \\
+	x &= a_{p-2} + (1-q)a_{p-1} \\
+	y &= a_{p-1} + (1-q)a_{p} \\
+\end{align*}
 
 To calculate $a_{p}$, we must find the matrix representation of 
 $$ a_{n} = (q)a_{n-2} + (1-q)a_{n-1} $$
 
-
-
-\[ 
+\begin{align*}
 \left[ \begin{array}{ccc}
 a_{n} \\
 a_{n-1} \\
 \end{array} \right] 
-=
+&=
 \left[ \begin{array}{ccc}
 q & q-1 \\
 0 & 1 \\
@@ -70,27 +72,21 @@ q & q-1 \\
 \left[ \begin{array}{ccc}
  a_{n-2}\\
 a_{n-1} \\
-\end{array} \right]
-\] 
-
-\[ 
+\end{array} \right] \\
 \left[ \begin{array}{ccc}
 a_{1} \\
 a_{0} \\
 \end{array} \right] 
-=
+&=
 \left[ \begin{array}{ccc}
 y \\
 x \\
-\end{array} \right]
-\] 
-
-\[ 
+\end{array} \right] \\
 \left[ \begin{array}{ccc}
 a_{n} \\
 a_{n-1} \\
 \end{array} \right] 
-=
+&=
 \left[ \begin{array}{ccc}
 q-1 & q \\
 1 & 0 \\
@@ -99,28 +95,25 @@ q-1 & q \\
  a_{n-1}\\
 a_{n-2} \\
 \end{array} \right]
-\] 
+\end{align*}
 
 Thus:
 
-\[ 
+\begin{align*}
 \left[ \begin{array}{ccc}
 y \\
 x \\
 \end{array} \right] 
-=
+&=
 \left[ \begin{array}{ccc}
 a_{p+1} \\
 a_{p} \\
-\end{array} \right]
-\] 
-
-\[ 
+\end{array} \right] \\
 \left[ \begin{array}{ccc}
 y \\
 x \\
 \end{array} \right] 
-=
+&=
 \left[ \begin{array}{ccc}
 q & q-1 \\
 0 & 1 \\
@@ -128,57 +121,51 @@ q & q-1 \\
 \left[ \begin{array}{ccc}
 y \\
 x \\
-\end{array} \right]
-\] 
-
-\[ 
+\end{array} \right] \\
 \left[ \begin{array}{ccc}
 y \\
 x \\
 \end{array} \right] 
-=
+&=
 A^{p}
 \left[ \begin{array}{ccc}
 y \\
 x \\
-\end{array} \right]
-\] 
+\end{array} \right] \\
+\end{align*}
 
-
-\[ A^{p} = 
+\begin{align*}
+A^{p} &= 
 \left[ \begin{array}{ccc}
 q-1 & q \\
 1 & 0 \\
 \end{array} \right] ^{p}
 =
-PD^{p}P^{-1}
-\] 
-\[ A = 
+PD^{p}P^{-1} \\ 
+A &= 
 \left[ \begin{array}{ccc}
 q-1 & q \\
 1 & 0 \\
 \end{array} \right]
 =
-PDP^{-1}
-\] 
-\[ P = 
+PDP^{-1} \\ 
+P &= 
 \left[ \begin{array}{ccc}
 -1 & q \\
 1 & 1 \\
-\end{array} \right]
-, P^{-1} =
+\end{array} \right] \\
+P^{-1} &=
 \left[ \begin{array}{ccc}
 -(q+1)^{-1} & q(q+1)^{-1} \\
 (q+1)^{-1} & (q+1)^{-1} \\
-\end{array} \right]
-, D = 
+\end{array} \right] \\
+D &= 
 \left[ \begin{array}{ccc}
 -1 & 0 \\
 0 & q \\
-\end{array} \right]
-\] 
-\[ A^{p}
-=
+\end{array} \right] \\ 
+A^{p}
+&=
 \left[ \begin{array}{ccc}
 -1 & q \\
 1 & 1 \\
@@ -190,10 +177,9 @@ PDP^{-1}
 \left[ \begin{array}{ccc}
 -(q+1)^{-1} & q(q+1)^{-1} \\
 (q+1)^{-1} & (q+1)^{-1} \\
-\end{array} \right]
-\]
-\[ A^{p}
-=
+\end{array} \right] \\
+A^{p}
+&=
 \left[ \begin{array}{ccc}
 -1 & q \\
 1 & 1 \\
@@ -205,39 +191,30 @@ PDP^{-1}
 \left[ \begin{array}{ccc}
 -(q+1)^{-1} & q(q+1)^{-1} \\
 (q+1)^{-1} & (q+1)^{-1} \\
-\end{array} \right]
-\]
-
-\[
-A^{p}=
+\end{array} \right] \\
+A^{p} &=
 \left[ \begin{array}{ccc}
 \frac{q^{p+1} + (-1)^{p+1}}{q+1} & \frac{q^{p+1} + (-1)^{p}(q)}{q+1} \\
 \frac{q^{p} + (-1)^{p+1}}{q+1} & \frac{q^{p} + (-1)^{p}(q)}{q+1} \\
-\end{array} \right]
-\]
-
-\[
+\end{array} \right] \\
 \left[ \begin{array}{ccc}
 y \\
 x \\
-\end{array} \right]=
+\end{array} \right]&=
 A^{p}
 \left[ \begin{array}{ccc}
 y \\
 x \\
-\end{array} \right]
-\]
-
-\[
+\end{array} \right] \\
 \left[ \begin{array}{ccc}
 y \\
 x \\
-\end{array} \right]=
+\end{array} \right]&=
 \left[ \begin{array}{ccc}
 y \frac{q^{p+1} + (-1)^{p+1}}{q+1} + x \frac{q^{p+1} + (-1)^{p}(q)}{q+1} \\
 y \frac{q^{p} + (-1)^{p+1}}{q+1} + x \frac{q^{p} + (-1)^{p}(q)}{q+1} \\
-\end{array} \right]
-\]
+\end{array} \right] \\
+\end{align*}
 
 Which confirms
 
