@@ -64,7 +64,6 @@ in this work essentially just reduces the amount of computation that has to be d
 One way to obtain a knot invariant from quandles is by counting the number of homomorphisms from the fundamental knot quandle into a fixed quandle $Q$. The Wirtinger has one generator for each arc in a knot diagram, so
 this reduces to counting the number of quandle colorings in the sense we have just defined! To reiterate, if $Q$ admits $n$ colorings for a diagram of $K$ and $m \neq n$ colorings for $K^\prime$ then $K \not\cong K^\prime$.
 
-% describe how quandle colorings give rise to a knot invariant
 
 \subsection{Deriving the quandle axioms from the Reidemeister moves}
 \label{sec:quandle_axioms}
@@ -119,41 +118,40 @@ We usually refer to this structure just as a quandle. They are called `involutor
 
 \subsection{Classes of quandles}
 
-\subsubsection{Alexander quandles}
+In this section we give a very brief and not exhaustive description of some classes of Quandles.
+
+\subsubsection{$\Z_{p,q}$ quandles}
 \label{sec:alexander}
 
-The \textbf{Alexander Quandle} is defined as:
+For any unit $q$ (fixed) in a commutative ring $K$, we can define a quandle structure over $K$, denoted by $K_q$, by setting
 
-$$ x \uc y = ty + (1 - t)a $$
+\begin{align}
+  a \uc b &\defeq q a + (1 - q)b \\
+  a \uc^{-1} b &\defeq q^{-1} a + (1 - q^{-1})b
+\end{align}
 
-$t$ is usually a free variable in $\mathbb{C}$ however for this paper we consider a special case of the Alexander Quandle:
+In this work we concern ourselves with quandles of this type, taking $\Z_p$ as the base structure. We refer to this as a \emph{$\Z_{p,q}$ quandle}.
 
-$$ x \uc y = qy + (1 - q)a $$
-
-where $q$ is a free variable in $\mathbb{Z}_n$. The reasons for this will be made clear when we consider the relationship between the Alexander Quandle and coloring.
-
-\subsubsection{Dihedral quandles}
-\label{sec:dihedral}
-
-The \textbf{Dihedral Quandle} is defined as:
-
-$$x\uc y = 2x - y$$
-
-it is a special case of the Alexander quandle when $t$ is evaluated at $-1$.
-
-% is exactly Z_p coloring
+In general, quandles defined this way are called \emph{Alexander quandles}\footnote{Alexander quandles are constructed from modules over $\Z_p[t,t^{-1}]$ with $a \uc b \defeq t a + (1 - t) b$.}.
 
 \subsubsection{Conjugal quandles}
 \label{sec:conjugal}
 
-\subsection{Coloring}
+We can define a quandle structure over any group $G$, using $n$-fold conjugation as the undercrossing operation.
 
-We say that a knot $K$ is $Z_p$ colorable if given an prime $p > 2$ every strand in the projection of $K$ can be labeled using numbers $0$ to $p-1$, with at least 2 of the labels distinct so that at each crossing we have:
+\begin{equation}
+  a \uc b \defeq b^n a b^{-n}
+\end{equation}
 
-$$ 2x - y - z = 0 \mod p $$
+\subsubsection{Dihedral quandles}
+\label{sec:dihedral}
 
+The order $n$ dihedral group $D_n$ gives rise to a quandle through conjugation, so dihedral quandles are a subset of conjugal quandles. However, they are notable for the following reason:
+$\Z_{n, n - 1}$ gives rise to the same quandle! Furthermore, the dihedral undercrossing operation can be given as
 
+$$x\uc y \defeq 2x - y \mod n$$
 
+A knot is quandle colorable by the order $n$ dihedral quandle if and only if it is $\Z_n$ colorable! In this sense, $\Z_p$ coloring $\subset$ quandle coloring.
 
 
 \end{document}
