@@ -9,7 +9,8 @@ undercrossing, $\uc$. A set of axioms that $\uc$ must satisfy in order to be a `
 Section~\ref{sec:quandle_axioms}.
 
 But this is not the only way that quandles can be seen to be deeply connected to knots - associated with every knot is a `fundamental quandle'. This is obtained from the Wirtinger presentation of the fundamental knot group,
-as the relations involve only conjugation (Section~\ref{sec:})
+as the relations involve only conjugation (Section~\ref{sec:}). The fundamental quandle is nearly a complete knot invariant\footnote{It doesn't care about orientation}!
+
 
 \subsection{Notation}
 
@@ -56,34 +57,48 @@ Figure~\ref{fig:labeling_rules} exists. This allows us to succintly express the 
 
 A braid diagram $b = {(B_p)}^q \in \diag(T(p,q))$ is colorable if $\forall c \in  \C(b) \theta_2 \circ \zeta_b(c) = \theta_1 \circ \zeta_b(c) \uc \theta_2 \circ \zeta_b(c)$.
 
+Determining whether a given quandle $Q$ colors a knot $K$ is in general extremely difficult. In this work however, we restrict ourselves to a certain class of finite quandles (Section~\ref{sec:alexander}) as they have a very nice
+form. This has the side effect that checking whether a quandle in this class colors a knot boils down to a mechanical procedure that gives an answer in finite (but possibly very large) time - everything is finite! Our contribution
+in this work essentially just reduces the amount of computation that has to be done to check colorability through a careful treatment of the relations at hand.
+
+One way to obtain a knot invariant from quandles is by counting the number of homomorphisms from the fundamental knot quandle into a fixed quandle $Q$. The Wirtinger has one generator for each arc in a knot diagram, so
+this reduces to counting the number of quandle colorings in the sense we have just defined! To reiterate, if $Q$ admits $n$ colorings for a diagram of $K$ and $m \neq n$ colorings for $K^\prime$ then $K \not\cong K^\prime$.
+
+% describe how quandle colorings give rise to a knot invariant
+
 \subsection{Deriving the quandle axioms from the Reidemeister moves}
 \label{sec:quandle_axioms}
 
+In this section we `derive' the quandle axioms from the Reidemeister moves, and in the process see how quandle colorings are naturally diagram invariants.
+
+The first Reidemeister move (R1) allows to put in a `twist' on any arc of a knot diagram without changing its equivalency class. But putting in a twist introduces a crossing - so to make quandles R1 invariant we demand that
+they satisfy $a \uc a = a$ for all $a \in Q$. See Figure~\ref{fig:r1} for a very helpful illustration.
+
+R2 allows us to pull non-interesting strands away from each other. Figure~\ref{fig:r2} illustrates how this gives rise to the second axiom, that $(a \uc^{-1} b) \uc b = b$.
+
+I will not attempt to describe R3. Figure~\ref{fig:r3} illustrates how it gives rise to the third axiom, that $(a \uc b) \uc c =  (a \uc c) \uc (b \uc c)$.
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{R1}
-  \caption{R1. Figure reproduced from~\cite{Cusick}}\label{fig:r1}
+  \caption{R1. Figure reproduced from~\cite{Cusick}. }\label{fig:r1}
 \end{figure}
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.8\textwidth]{R2}
-  \caption{R2. Figure reproduced from~\cite{Cusick}}\label{fig:r2}
+  \caption{R2. Figure reproduced from~\cite{Cusick}.}\label{fig:r2}
 \end{figure}
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.8\textwidth]{R3}
-  \caption{R3. Figure reproduced from~\cite{Cusick}}\label{fig:r3}
+  \includegraphics[\textwidth]{R3}
+  \caption{R3. Figure reproduced from~\cite{Cusick}. This picture is worth at least several hundred words.}\label{fig:r3}
 \end{figure}
 
 
 
-
-%% We say that a knot $K$ is $Z_{p,q}$ colorable if for some unit $q \in \mathbb{Z}_p$ every strand in the projectio of $K$ can be labeled using numbers $0$ to $p-1$ such that at each crossing we have:
-
-%% $$qx - (1-q)y - z \equiv 0 \mod p $$
+We can now give the definition of quandles.
 
 \begin{definition}
 An \emph{involutory quandle} is a set $K$ equiped with a binary operation $\uc$ such that $\forall x,y,z \in K$,
@@ -92,20 +107,20 @@ An \emph{involutory quandle} is a set $K$ equiped with a binary operation $\uc$ 
 	x \uc x = x
 \end{equation}
 \begin{equation}
-	x \uc (x \uc y) = y \\
+	(x \uc^{-1} y) \uc y = y \\
 \end{equation}
 \begin{equation}
-	x \uc (y \uc z) = (x \uc y) \uc (x \uc z) \\
+	(x \uc y) \uc z = (x \uc y) \uc (x \uc z) \\
 \end{equation}
 
 We usually refer to this structure just as a quandle. They are called `involutory' because quandles are involutions (i.e. $\forall x \uc (x \uc x) = x$).
 
 \end{definition}
 
-
 \subsection{Classes of quandles}
 
 \subsubsection{Alexander quandles}
+\label{sec:alexander}
 
 The \textbf{Alexander Quandle} is defined as:
 
