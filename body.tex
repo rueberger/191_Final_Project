@@ -51,16 +51,16 @@ $$a_{0} = a_{p}, a_{1} = a_{p+1}$$
 $$x = a_{p-2} + (1-q)a_{p-1}$$
 $$ y = a_{p-1} + (1-q)a_{p}$$
 
-To calculate $a_{p}$, we must find the matrix representation of 
+To calculate $a_{p}$, we must find the matrix representation of
 $$ a_{n} = (q)a_{n-2} + (1-q)a_{n-1} $$
 
 
 
-\[ 
+\[
 \left[ \begin{array}{ccc}
 a_{n} \\
 a_{n-1} \\
-\end{array} \right] 
+\end{array} \right]
 =
 \left[ \begin{array}{ccc}
 q & q-1 \\
@@ -70,25 +70,25 @@ q & q-1 \\
  a_{n-2}\\
 a_{n-1} \\
 \end{array} \right]
-\] 
+\]
 
-\[ 
+\[
 \left[ \begin{array}{ccc}
 a_{1} \\
 a_{0} \\
-\end{array} \right] 
+\end{array} \right]
 =
 \left[ \begin{array}{ccc}
 y \\
 x \\
 \end{array} \right]
-\] 
+\]
 
-\[ 
+\[
 \left[ \begin{array}{ccc}
 a_{n} \\
 a_{n-1} \\
-\end{array} \right] 
+\end{array} \right]
 =
 \left[ \begin{array}{ccc}
 q-1 & q \\
@@ -98,27 +98,27 @@ q-1 & q \\
  a_{n-1}\\
 a_{n-2} \\
 \end{array} \right]
-\] 
+\]
 
 Thus:
 
-\[ 
+\[
 \left[ \begin{array}{ccc}
 y \\
 x \\
-\end{array} \right] 
+\end{array} \right]
 =
 \left[ \begin{array}{ccc}
 a_{p+1} \\
 a_{p} \\
 \end{array} \right]
-\] 
+\]
 
-\[ 
+\[
 \left[ \begin{array}{ccc}
 y \\
 x \\
-\end{array} \right] 
+\end{array} \right]
 =
 \left[ \begin{array}{ccc}
 q & q-1 \\
@@ -128,39 +128,39 @@ q & q-1 \\
 y \\
 x \\
 \end{array} \right]
-\] 
+\]
 
-\[ 
+\[
 \left[ \begin{array}{ccc}
 y \\
 x \\
-\end{array} \right] 
+\end{array} \right]
 =
 A^{p}
 \left[ \begin{array}{ccc}
 y \\
 x \\
 \end{array} \right]
-\] 
+\]
 
 
-\[ A^{p} = 
+\[ A^{p} =
 \left[ \begin{array}{ccc}
 q-1 & q \\
 1 & 0 \\
 \end{array} \right] ^{p}
 =
 PD^{p}P^{-1}
-\] 
-\[ A = 
+\]
+\[ A =
 \left[ \begin{array}{ccc}
 q-1 & q \\
 1 & 0 \\
 \end{array} \right]
 =
 PDP^{-1}
-\] 
-\[ P = 
+\]
+\[ P =
 \left[ \begin{array}{ccc}
 -1 & q \\
 1 & 1 \\
@@ -170,12 +170,12 @@ PDP^{-1}
 -(q+1)^{-1} & q(q+1)^{-1} \\
 (q+1)^{-1} & (q+1)^{-1} \\
 \end{array} \right]
-, D = 
+, D =
 \left[ \begin{array}{ccc}
 -1 & 0 \\
 0 & q \\
 \end{array} \right]
-\] 
+\]
 \[ A^{p}
 =
 \left[ \begin{array}{ccc}
@@ -200,7 +200,7 @@ PDP^{-1}
 \left[ \begin{array}{ccc}
 -1 & 0 \\
 0 & q^{p} \\
-\end{array} \right] 
+\end{array} \right]
 \left[ \begin{array}{ccc}
 -(q+1)^{-1} & q(q+1)^{-1} \\
 (q+1)^{-1} & (q+1)^{-1} \\
@@ -251,8 +251,8 @@ A $(2,n)$-torus knot $\gcd(2,n) = 1$, therefore, $n$ must be odd. We can then si
 
 From this point, we can arrive upon the $Z_{p,q}$ quandle colorings of any $T(2, p)$ torus knot. Find all $q$ satisfying the equivalence relation above $\forall x,y \in \mathbb{Z}_n$
 
-\section{Quandle Coloring of the (3,q)-torus knot}\label{sec:2ntorus}
-We first restricted ourselves to $T(2,p)$-torus knots. Conveniently, we were able to derive an easily diagonalizable recurrence relation matrix, $A$. Now, we are going to try and extend this $Z_{p,q}$ quandle coloring to all $T(p,3)$ knots. 
+\section{Quandle Coloring of the (3,q)-torus knot}\label{sec:3ntorus}
+We first restricted ourselves to $T(2,p)$-torus knots. Conveniently, we were able to derive an easily diagonalizable recurrence relation matrix, $A$. Now, we are going to try and extend this $Z_{p,q}$ quandle coloring to all $T(p,3)$ knots.
 
 Remember, the $(2,n)$-torus knot satisfies the following recurrence relation:
 \begin{align*}
@@ -261,7 +261,7 @@ Remember, the $(2,n)$-torus knot satisfies the following recurrence relation:
 	a_{n+2} &= a_{n} \uc a_{n+1} \\
 \end{align*}
 
-Using the braid word of a $T(3,p)$-torus knot, the quandle coloring satisfies two recurrence relations that depending on the parity of $n$: 
+Using the braid word of a $T(3,p)$-torus knot, the quandle coloring satisfies two recurrence relations that depending on the parity of $n$:
 \begin{align*}
 	a_0 &= x \\
 	a_1 &= y \\
@@ -274,14 +274,14 @@ Using the braid word of a $T(3,p)$-torus knot, the quandle coloring satisfies tw
 
 Here, there recurrence relation for odd and even values of $n$ are not equivalent. Thus, the recurrence relation matrix, $A$, for the $T(3, p)$ Alexander Quandle has two forms. $A_{0}$ for calculating $a_{n}$ when $n \equiv 0 \mod 2$. $A_{1}$ is for calculating $a_{n}$ when $n \equiv 1 \mod 2$:
 
-\[ A_{0} = 
+\[ A_{0} =
 \left[ \begin{array}{ccc}
 q-1 & q & 0 \\
 q-1 & 0 & q \\
 1 & 0 & 0 \\
 \end{array} \right]
 \]
-\[ A_{1} = 
+\[ A_{1} =
 \left[ \begin{array}{ccc}
 q-1 & 0 & q \\
 q-1 & q & 0 \\
@@ -291,12 +291,12 @@ q-1 & q & 0 \\
 
 If $n \equiv 0 \mod 2$:
 
-\[ 
+\[
 \left[ \begin{array}{ccc}
 a_{n} \\
 a_{n-1} \\
 a_{n-2} \\
-\end{array} \right] 
+\end{array} \right]
 =
 \left[ \begin{array}{ccc}
 q-1 & q & 0 \\
@@ -307,17 +307,17 @@ q-1 & 0 & q \\
 a_{n-2} \\
 a_{n-3} \\
 a_{n-4} \\
-\end{array} \right] 
-\] 
+\end{array} \right]
+\]
 
 If $n \equiv 1 \mod 2$:
 
-\[ 
+\[
 \left[ \begin{array}{ccc}
 a_{n} \\
 a_{n-1} \\
 a_{n-2} \\
-\end{array} \right] 
+\end{array} \right]
 =
 \left[ \begin{array}{ccc}
 q-1 & 0 & q \\
@@ -328,18 +328,18 @@ q-1 & q & 0 \\
 a_{n-2} \\
 a_{n-3} \\
 a_{n-4} \\
-\end{array} \right] 
-\] 
+\end{array} \right]
+\]
 
 
 We can start calculating successive entries in the sequence {$a_{n}$}:
 
-\[ 
+\[
 \left[ \begin{array}{ccc}
 a_{3} \\
 a_{2} \\
 a_{1} \\
-\end{array} \right] 
+\end{array} \right]
 =
 \left[ \begin{array}{ccc}
 q-1 & 0 & q \\
@@ -350,15 +350,15 @@ q-1 & q & 0 \\
 z \\
 y \\
 x \\
-\end{array} \right] 
-\] 
+\end{array} \right]
+\]
 
-\[ 
+\[
 \left[ \begin{array}{ccc}
 a_{4} \\
 a_{3} \\
 a_{2} \\
-\end{array} \right] 
+\end{array} \right]
 =
 \left[ \begin{array}{ccc}
 q-1 & q & 0 \\
@@ -374,21 +374,21 @@ q-1 & q & 0 \\
 z \\
 y \\
 x \\
-\end{array} \right] 
-\] 
+\end{array} \right]
+\]
 
-\[ 
+\[
 \left[ \begin{array}{ccc}
 a_{n} \\
 a_{n-1} \\
 a_{n-2} \\
-\end{array} \right] 
+\end{array} \right]
 =
 \left[ \begin{array}{ccc}
 q-1 & q & 0 \\
 q-1 & 0 & q \\
 1 & 0 & 0 \\
-\end{array} \right] ^{n//2} 
+\end{array} \right] ^{n//2}
 \left[ \begin{array}{ccc}
 q-1 & 0 & q \\
 q-1 & q & 0 \\
@@ -398,15 +398,15 @@ q-1 & q & 0 \\
 z \\
 y \\
 x \\
-\end{array} \right] 
-\] 
+\end{array} \right]
+\]
 
-\[ 
+\[
 \left[ \begin{array}{ccc}
 a_{n} \\
 a_{n-1} \\
 a_{n-2} \\
-\end{array} \right] 
+\end{array} \right]
 =
 \left[ \begin{array}{ccc}
 q-1 & 0 & q \\
@@ -417,13 +417,13 @@ q-1 & q & 0 \\
 (q-1)^{2} + q(q-1) & q^{2} & (q-1)q \\
 (q-1)^{2} + q & 0 & (q-1)q \\
 q-1 & 0 & q \\
-\end{array} \right] ^{n//2} 
+\end{array} \right] ^{n//2}
 \left[ \begin{array}{ccc}
 z \\
 y \\
 x \\
-\end{array} \right] 
-\] 
+\end{array} \right]
+\]
 
 Replicating the calculations of the $T(p,2)$ Alexander quandle equivalence relations, you can find the following equivalence relations:
 
@@ -433,7 +433,7 @@ Replicating the calculations of the $T(p,2)$ Alexander quandle equivalence relat
 	z \equiv P(x,y,z,q) & \mod{p} \\
 \end{align*}
 
-Given the complexity of the diagonal of $A^{p}$, we were unable to find a simplified form for 
+Given the complexity of the diagonal of $A^{p}$, we were unable to find a simplified form for
 
 \[ A^{n}
 =
@@ -446,19 +446,52 @@ q-1 & q & 0 \\
 (q-1)^{2} + q(q-1) & q^{2} & (q-1)q \\
 (q-1)^{2} + q & 0 & (q-1)q \\
 q-1 & 0 & q \\
-\end{array} \right] ^{n//2} 
+\end{array} \right] ^{n//2}
 \]
 
-We suspect there are alternative or brute force methods available to solve the $T(p,3)$ Alexander quandle equivalence relations.  We have not calculated the explicit solution in terms of $q$ for this equivalence set due to computational capacity. Additional endeavors in efficient computing or decomposition of $A^{n}$ are needed to find a timely solution to the equivalence set for the $T(p,3)$ Alexander quandle representations. 
+We suspect there are alternative or brute force methods available to solve the $T(p,3)$ Alexander quandle equivalence relations.  We have not calculated the explicit solution in terms of $q$ for this equivalence set due to computational capacity. Additional endeavors in efficient computing or decomposition of $A^{n}$ are needed to find a timely solution to the equivalence set for the $T(p,3)$ Alexander quandle representations.
 
-\section{Conclusions: Quandle Coloring of the T(p,q)-torus knot}\label{sec:2ntorus}
-Although further calculations can be done to solve for $q$ in 
+\section{Conclusions: Quandle Coloring of the T(p,q)-torus knot}\label{sec:pntorus}
+Although further calculations can be done to solve for $q$ in
 \begin{align*}
 	x \equiv P(x,y,z,q) & \mod{p} \\
 	y \equiv P(x,y,z,q) & \mod{p} \\
 	z \equiv P(x,y,z,q) & \mod{p} \\
 \end{align*}
-we were able to define a process for finding the $Z_{p,q}$ Quandle Colorings of T(p, 3) and T(p,2) torus knots. By (1) finding the recurrence relation for quandle labeling of a T(p,q) torus knot, (2) representing the recurrence relation in terms of the alexander quandle, (3) constructiing a recurrence relation matrix,  (4) setting the quandle labeling equivalence relations ($a_{0} \equiv P(a_{0},...,a_{p},q) \mod{p}$) , and (5) solving for $q$ across $\forall x,y \in \mathbb{Z}_n$, we have defined a reasonable process for finding the $Z_{p,q}$ Quandle Colorings of $T(p,q)$ torus knots. 
+we were able to define a process for finding the $Z_{p,q}$ Quandle Colorings of T(p, 3) and T(p,2) torus knots. By (1) finding the recurrence relation for quandle labeling of a T(p,q) torus knot, (2) representing the recurrence relation in terms of the alexander quandle, (3) constructiing a recurrence relation matrix,  (4) setting the quandle labeling equivalence relations ($a_{0} \equiv P(a_{0},...,a_{p},q) \mod{p}$) , and (5) solving for $q$ across $\forall x,y \in \mathbb{Z}_n$, we have defined a reasonable process for finding the $Z_{p,q}$ Quandle Colorings of $T(p,q)$ torus knots.
+
+\section{A quandle relation for $T(p,q)$ knots}
+
+In this section we derive a recurrence relation that a quandle coloring $T(p,q)$ must satisfy. We take advantage that every $T(p,q)$ knot has the very simple braid diagram representation $(B_p)^q$ (see Figure~\ref{fig:bp}). First,
+we set some notation, adopting that of Figure~\ref{fig:braid_notation}. For a $(B_p)^q$ braid diagram, we call the strands, starting from the far left of the first $B_p$ $z^0_1, z^0_2, \ldots, z^0_p$ from top to bottom.
+The right strands of the first copy of $B_p$, or equivalently, the left strands of the second copy of$B_p$ we notate analogously, changing the superscript to $1$. For instance, the right most strands in the diagram are called $z^{q - 1}_i$.
+
+Additionally, we adopt $O_i$ as notation for the overcrossing strand in the $i - 1$th copy of $B_p$. The first overcrossing is called $O_0$.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\textwidth]{b5}
+  \caption{On the left, the braid $B_5$. On the right, $B_p$}\label{fig:bp}
+\end{figure}
+
+\begin{figure}[h]
+   \centering
+   \includegraphics[width=0.8\textwidth]{braid_notation}
+   \caption{The notation we adopt for braid diagrams.}\label{fig:braid_notation}
+\end{figure}
+
+With this setup, we easily derive the following recurrence relation
+
+\begin{equation}
+   \label{eq:pq_recurrence}
+   z^{n+1}_l = \left\{
+   \begin{matrix}
+        z^n_{l+1} \uc O_n \text{ if } l < p \\
+        z^n_1 \text{ if } l = p
+   \end{matrix}
+   \right.
+\end{equation}
+
 
 \section{Further Questions}\label{fqs}
 
