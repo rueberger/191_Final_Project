@@ -4,11 +4,12 @@
 \section{Introduction}
 \label{sec:intro}
 
-Quandles are algebraic structures that are deeply connected to knots. This connection is most strikingly presented by considering the strands of a knot diagrams as objects acted on by the operation of
+Quandles are algebraic structures that are deeply connected to knots. This connection is most strikingly presented by considering the arcs of a knot diagrams as objects acted on by the operation of
 undercrossing, $\uc$. A set of axioms that $\uc$ must satisfy in order to be a `knot diagram invariant' (in a sense we will define shortly) can be easily derived from the Reidemeister moves, as shown in
 Section~\ref{sec:quandle_axioms}.
 
-But this is not the only way that quandles can be seen to be deeply connected to knots - the fundamental group for a knot $K$, $\pi_1(\R^3 \setminus K)$ is a quandle!
+But this is not the only way that quandles can be seen to be deeply connected to knots - associated with every knot is a `fundamental quandle'. This is obtained from the Wirtinger presentation of the fundamental knot group,
+as the relations involve only conjugation (Section~\ref{sec:})
 
 \subsection{Notation}
 
@@ -21,8 +22,9 @@ We set our notation for this manuscript in this section
   \item Let $\zeta_d: \C(d) \to \A(d) \times \A(d)$ denote the natural map that maps each crossing onto the pair of
     \emph{undercrossing} arcs. We require that $\zeta_d$ preserve order in the undercrossing arcs in the
     sense that if $a$ is an arc between crossings $c_1$ and $c_2$ then $\zeta_d(c_1) = (\alpha_1, a)$ and $\zeta_d(c_2) = (a, \alpha_2)$ for
-    $alpha_i \in \A(d)$. For instance, for a braid diagram (as in Figure~\ref{fig:braid_diagram}), the first element of $\zeta_d(c)$ is always the arc on the left of the crossing,
+    $\alpha_i \in \A(d)$. For instance, for a braid diagram (as in Figure~\ref{fig:braid_diagram}), the first element of $\zeta_d(c)$ is always the arc on the left of the crossing,
     and the second element is the arc on the right of the crossing.
+  \item $\theta_i$ are projection maps onto the $i$th cartesian product. For instance, $\theta_1 \circ \zeta_d$ gives the first undercrossing arc.
   \item We denote the remainder of a number $n$ when divided by $k$ as $n\%k$.
   \item We denote $//$ to mean floor division.
 \end{itemize}
@@ -34,11 +36,25 @@ We set our notation for this manuscript in this section
   \caption{Example of a braid diagram}\label{fig:braid_diagram}
 \end{figure}
 
+\subsection{Quandles generalize $\Z_p$ coloring}
+
+A \emph{$p$ coloring} of a knot diagram $d \in \diag(K)$ is a mapping $C: \A(d) \to \Z_p$ that does not map every arc onto a single element $p \in \Z_p$ and satisfies $z = 2x - y$ (in $\Z_p$) at each crossing where
+$z$ is the label of the overcrossing and $x,y$ are the labels of the undercrossings. For $\Z_3$ for instance, this relation demands that either all three colors or only one of them are present at every crossing.
+
+Quandles (we will get to their definition in a minute) can also be used to color knots. In fact, quandle coloring includes $\Z_p$ coloring as a special case (Section~\ref{sec:dihedral}). A \emph{quandle coloring} of a knot diagram
+$d \in \diag(K)$ by a quandle $Q$ is a mapping $C: \A(d) \to Q$ such that the labeling rules as described in Figure~\ref{fig:labeling_rules} are satisfied at all crossings.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\textwidth]{labeling_rules}
+  \caption{The convention we assume for quandle colorings. Figure reproduced from~\cite{Cusick}}\label{fig:labeling_rules}
+\end{figure}
 
 
-\subsection{Quandles generalize coloring}
+We say a knot is colorable by a quandle $Q$ if such a map $C: \A(d) \to Q$ satisfying the labeling rules exists. It so happens that for braid diagrams of $T(p,q)$ knots only the type of crossing on the left in
+Figure~\ref{fig:labeling_rules} exists. This allows us to succintly express the colorability condition for $T(p,q)$ knots.
 
-A $p$ coloring of a knot diagram $d \in \diag(K)$ is a mapping $C: \A(d) \to Z_p$
+A braid diagram $b = {(B_p)}^q \in \diag(T(p,q))$ is colorable if $\forall c \in  \C(b) \theta_2 \circ \zeta_b(c) = \theta_1 \circ \zeta_b(c) \uc \theta_2 \circ \zeta_b(c)$.
 
 \subsection{Deriving the quandle axioms from the Reidemeister moves}
 \label{sec:quandle_axioms}
@@ -64,8 +80,13 @@ A $p$ coloring of a knot diagram $d \in \diag(K)$ is a mapping $C: \A(d) \to Z_p
 
 
 
-\subsection{Involutary Quandle}
-In this paper we concern ourselves with \textbf{Involutory Quandles}. An \textbf{involutory quandle} is any set $K$ equiped with a binary operation $\uc$ that satisfies $3$ axioms:
+
+%% We say that a knot $K$ is $Z_{p,q}$ colorable if for some unit $q \in \mathbb{Z}_p$ every strand in the projectio of $K$ can be labeled using numbers $0$ to $p-1$ such that at each crossing we have:
+
+%% $$qx - (1-q)y - z \equiv 0 \mod p $$
+
+\begin{definition}
+An \emph{involutory quandle} is a set $K$ equiped with a binary operation $\uc$ such that $\forall x,y,z \in K$,
 
 \begin{equation}
 	x \uc x = x
@@ -77,9 +98,14 @@ In this paper we concern ourselves with \textbf{Involutory Quandles}. An \textbf
 	x \uc (y \uc z) = (x \uc y) \uc (x \uc z) \\
 \end{equation}
 
-These equations can be though of a symbolic representations of Reidemeister moves. $(1)$ corresponds to the Type I Reidemeister move, $(2)$ corresponds to the Type II Reidemeister move, and $(3)$ corresponds to the Type III Reidemeister move. (See Fig)
+We usually refer to this structure just as a quandle. They are called `involutory' because quandles are involutions (i.e. $\forall x \uc (x \uc x) = x$).
 
-\subsection{Alexander Quandle}
+\end{definition}
+
+
+\subsection{Classes of quandles}
+
+\subsubsection{Alexander quandles}
 
 The \textbf{Alexander Quandle} is defined as:
 
@@ -91,12 +117,19 @@ $$ x \uc y = qy + (1 - q)a $$
 
 where $q$ is a free variable in $\mathbb{Z}_n$. The reasons for this will be made clear when we consider the relationship between the Alexander Quandle and coloring.
 
-\subsection{Dihedral Quandle}
+\subsubsection{Dihedral quandles}
+\label{sec:dihedral}
+
 The \textbf{Dihedral Quandle} is defined as:
 
 $$x\uc y = 2x - y$$
 
 it is a special case of the Alexander quandle when $t$ is evaluated at $-1$.
+
+% is exactly Z_p coloring
+
+\subsubsection{Conjugal quandles}
+\label{sec:conjugal}
 
 \subsection{Coloring}
 
@@ -104,12 +137,8 @@ We say that a knot $K$ is $Z_p$ colorable if given an prime $p > 2$ every strand
 
 $$ 2x - y - z = 0 \mod p $$
 
-(TODO: Cite FinalPaper.pdf)
 
-\subsection{Quandle Coloring}
 
-We say that a knot $K$ is $Z_{p,q}$ colorable if for some unit $q \in \mathbb{Z}_p$ every strand in the projectio of $K$ can be labeled using numbers $0$ to $p-1$ such that at each crossing we have:
 
-$$qx - (1-q)y - z \equiv 0 \mod p $$ 
 
 \end{document}
