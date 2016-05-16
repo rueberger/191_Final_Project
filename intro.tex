@@ -41,7 +41,7 @@ We set our notation for this manuscript in this section
 
 \subsection{Quandles generalize $\Z_p$ coloring}
 
-A \emph{$p$ coloring} of a knot diagram $d \in \diag(K)$ is a mapping $C: \A(d) \to \Z_p$ that does not map every arc onto a single element $p \in \Z_p$ and satisfies $z = 2x - y$ (in $\Z_p$) at each crossing where
+A \emph{$\mathbb{Z}_p$ coloring} of a knot diagram $d \in \diag(K)$ is a mapping $C: \A(d) \to \Z_p$ that does not map every arc onto a single element $p \in \Z_p$ and satisfies $z = 2x - y$ (in $\Z_p$) at each crossing where
 $z$ is the label of the overcrossing and $x,y$ are the labels of the undercrossings. For $\Z_3$ for instance, this relation demands that either all three colors or only one of them are present at every crossing.
 
 Quandles (we will get to their definition in a minute) can also be used to color knots. In fact, quandle coloring includes $\Z_p$ coloring as a special case (Section~\ref{sec:dihedral}). A \emph{quandle coloring} of a knot diagram
@@ -54,10 +54,10 @@ $d \in \diag(K)$ by a quandle $Q$ is a mapping $C: \A(d) \to Q$ such that the la
 \end{figure}
 
 
-We say a knot is colorable by a quandle $Q$ if such a map $C: \A(d) \to Q$ satisfying the labeling rules exists. It so happens that for braid diagrams of $T(p,q)$ knots only the type of crossing on the left in
-Figure~\ref{fig:labeling_rules} exists. This allows us to succintly express the colorability condition for $T(p,q)$ knots.
+We say a knot is colorable by a quandle $Q$ if such a map $C: \A(d) \to Q$ satisfying the labeling rules exists. It so happens that for braid diagrams of $T(n,r)$ knots only the type of crossing on the left in
+Figure~\ref{fig:labeling_rules} exists. This allows us to succintly express the colorability condition for $T(n,r)$ knots.
 
-A braid diagram $b = {(B_p)}^q \in \diag(T(p,q))$ (Figure~\ref{fig:bp}) is colorable if $\forall c \in  \C(b) \theta_2 \circ \zeta_b(c) = \theta_1 \circ \zeta_b(c) \uc \theta_2 \circ \zeta_b(c)$.
+A braid diagram $b = {(B_p)}^q \in \diag(T(n,r))$ (Figure~\ref{fig:bp}) is colorable if $\forall c \in  \C(b) \theta_2 \circ \zeta_b(c) = \theta_1 \circ \zeta_b(c) \uc \theta_2 \circ \zeta_b(c)$.
 
 Determining whether a given quandle $Q$ colors a knot $K$ is in general extremely difficult. In this work however, we restrict ourselves to a certain class of finite quandles (Section~\ref{sec:alexander}) as they have a very nice
 form. This has the side effect that checking whether a quandle in this class colors a knot boils down to a mechanical procedure that gives an answer in finite (but possibly very large) time - everything is finite! Our contribution
